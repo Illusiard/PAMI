@@ -3,7 +3,7 @@ PAMI\Message\Event\AsyncAGIEvent
 
 Event triggered when an async agi is executed.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AsyncAGIEvent

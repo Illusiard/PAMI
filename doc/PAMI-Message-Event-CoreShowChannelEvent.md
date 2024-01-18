@@ -3,7 +3,7 @@ PAMI\Message\Event\CoreShowChannelEvent
 
 Event triggered when an action CoreShowChannel is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: CoreShowChannelEvent

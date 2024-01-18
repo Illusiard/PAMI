@@ -3,7 +3,7 @@ PAMI\Message\Event\BridgeEvent
 
 Event triggered when bridging (connecting) two channels.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: BridgeEvent

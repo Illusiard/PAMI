@@ -2,12 +2,13 @@
 /**
  * Event triggered for a QueueStatus action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for a QueueStatus action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class QueueParamsEvent extends EventMessage
     /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
@@ -58,19 +58,19 @@ class QueueParamsEvent extends EventMessage
     /**
      * Returns key: 'Max'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getMax()
+    public function getMax(): ?int
     {
-        return intval($this->getKey('Max'));
+        return (int)$this->getKey('Max');
     }
 
     /**
      * Returns key: 'Strategy'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStrategy()
+    public function getStrategy(): ?string
     {
         return $this->getKey('Strategy');
     }
@@ -78,51 +78,51 @@ class QueueParamsEvent extends EventMessage
     /**
      * Returns key: 'Calls'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getCalls()
+    public function getCalls(): ?int
     {
-        return intval($this->getKey('Calls'));
+        return (int)$this->getKey('Calls');
     }
 
     /**
      * Returns key: 'HoldTime'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getHoldTime()
+    public function getHoldTime(): ?int
     {
-        return intval($this->getKey('HoldTime'));
+        return (int)$this->getKey('HoldTime');
     }
 
     /**
      * Returns key: 'Completed'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getCompleted()
+    public function getCompleted(): ?int
     {
-        return intval($this->getKey('Completed'));
+        return (int)$this->getKey('Completed');
     }
 
     /**
      * Returns key: 'Abandoned'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getAbandoned()
+    public function getAbandoned(): ?int
     {
-        return intval($this->getKey('Abandoned'));
+        return (int)$this->getKey('Abandoned');
     }
 
     /**
      * Returns key: 'ServiceLevel'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getServiceLevel()
+    public function getServiceLevel(): ?int
     {
-        return intval($this->getKey('ServiceLevel'));
+        return (int)$this->getKey('ServiceLevel');
     }
 
     /**
@@ -130,18 +130,18 @@ class QueueParamsEvent extends EventMessage
      *
      * @return float
      */
-    public function getServiceLevelPerf()
+    public function getServiceLevelPerf(): float
     {
-        return $this->getKey('ServiceLevelPerf');
+        return (float)$this->getKey('ServiceLevelPerf');
     }
 
     /**
      * Returns key: 'Weight'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getWeight()
+    public function getWeight(): ?int
     {
-        return intval($this->getKey('Weight'));
+        return (int)$this->getKey('Weight');
     }
 }

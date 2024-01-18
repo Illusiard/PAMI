@@ -2,12 +2,13 @@
 /**
  * A generic response message from ami.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Response
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -27,21 +28,22 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Response;
 
-use PAMI\Message\Message;
 use PAMI\Message\IncomingMessage;
 use PAMI\Message\Event\EventMessage;
 
 /**
  * A generic response message from ami.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Response
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -49,26 +51,29 @@ class ResponseMessage extends IncomingMessage
 {
     /**
      * Child events.
+     *
      * @var EventMessage[]
      */
-    private $events;
+    private array $events = [];
 
     /**
      * Is this response completed? (with all its events).
+     *
      * @var boolean
      */
-    private $completed;
+    private bool $completed;
 
     /**
      * Serialize function.
      *
      * @return string[]
      */
-    public function __sleep()
+    public function __sleep(): array
     {
-        $ret = parent::__sleep();
+        $ret   = parent::__sleep();
         $ret[] = 'completed';
         $ret[] = 'events';
+
         return $ret;
     }
 
@@ -79,7 +84,7 @@ class ResponseMessage extends IncomingMessage
      *
      * @return boolean
      */
-    public function isComplete()
+    public function isComplete(): bool
     {
         return $this->completed;
     }
@@ -91,12 +96,12 @@ class ResponseMessage extends IncomingMessage
      *
      * @return void
      */
-    public function addEvent(EventMessage $event)
+    public function addEvent(EventMessage $event): void
     {
         $this->events[] = $event;
-        if (stristr($event->getEventList(), 'complete') !== false
-            || stristr($event->getName(), 'complete') !== false
-            || stristr($event->getName(), 'DBGetResponse') !== false
+        if (stripos($event->getEventList(), 'complete') !== false
+            || stripos($event->getName(), 'complete') !== false
+            || stripos($event->getName(), 'DBGetResponse') !== false
         ) {
             $this->completed = true;
         }
@@ -107,7 +112,7 @@ class ResponseMessage extends IncomingMessage
      *
      * @return EventMessage[]
      */
-    public function getEvents()
+    public function getEvents(): array
     {
         return $this->events;
     }
@@ -117,9 +122,9 @@ class ResponseMessage extends IncomingMessage
      *
      * @return boolean
      */
-    public function isSuccess()
+    public function isSuccess(): bool
     {
-        return stristr($this->getKey('Response'), 'Error') === false;
+        return stripos($this->getKey('Response'), 'Error') === false;
     }
 
     /**
@@ -129,20 +134,19 @@ class ResponseMessage extends IncomingMessage
      *
      * @return boolean
      */
-    public function isList()
+    public function isList(): bool
     {
         return
-            stristr($this->getKey('EventList'), 'start') !== false
-            || stristr($this->getMessage(), 'follow') !== false
-        ;
+            stripos($this->getKey('EventList'), 'start') !== false
+            || stripos($this->getMessage(), 'follow') !== false;
     }
 
     /**
      * Returns key: 'Privilege'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->getKey('Message');
     }
@@ -151,11 +155,11 @@ class ResponseMessage extends IncomingMessage
      * Sets an action id. This should not be necessary, but asterisk sometimes
      * decides to not send the Response: or Event: headers.
      *
-     * @param string $actionId New ActionId.
+     * @param ?string $actionId New ActionId.
      *
      * @return void
      */
-    public function setActionId($actionId)
+    public function setActionId(?string $actionId = null): void
     {
         $this->setKey('ActionId', $actionId);
     }
@@ -167,11 +171,9 @@ class ResponseMessage extends IncomingMessage
      *
      * @return void
      */
-    public function __construct($rawContent)
+    public function __construct(string $rawContent)
     {
         parent::__construct($rawContent);
-        $this->events = array();
-        $this->eventsCount = 0;
         $this->completed = !$this->isList();
     }
 }

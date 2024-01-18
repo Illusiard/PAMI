@@ -3,7 +3,7 @@ PAMI\Message\Event\RTCPReceivedEvent
 
 Event triggered when exchanging rtp stats.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: RTCPReceivedEvent

@@ -1,3 +1,5 @@
+.idea
+
 composer.lock
 vendor
 .buildpath
@@ -6,4 +8,3 @@ vendor
 build
 docs/examples/quickstart/log.log
 resources/php.ini
-

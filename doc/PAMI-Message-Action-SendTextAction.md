@@ -3,7 +3,7 @@ PAMI\Message\Action\SendTextAction
 
 SendText action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: SendTextAction

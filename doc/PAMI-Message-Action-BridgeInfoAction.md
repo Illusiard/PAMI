@@ -3,7 +3,7 @@ PAMI\Message\Action\BridgeInfoAction
 
 Returns detailed information about a bridge and the channels in it.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: BridgeInfoAction

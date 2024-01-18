@@ -3,7 +3,7 @@ PAMI\Message\Event\AgentsEvent
 
 Event triggered for agents.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AgentsEvent

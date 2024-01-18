@@ -3,7 +3,7 @@ PAMI\Message\Action\QueueUnpauseAction
 
 Queue unpause action. This does not exist in the ami.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueUnpauseAction

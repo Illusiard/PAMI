@@ -2,12 +2,13 @@
 /**
  * Event triggered when a peer changes its status.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a peer changes its status.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class PeerStatusEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'ChannelType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannelType()
+    public function getChannelType(): ?string
     {
         return $this->getKey('ChannelType');
     }
@@ -68,9 +58,9 @@ class PeerStatusEvent extends EventMessage
     /**
      * Returns key: 'Peer'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPeer()
+    public function getPeer(): ?string
     {
         return $this->getKey('Peer');
     }
@@ -78,9 +68,9 @@ class PeerStatusEvent extends EventMessage
     /**
      * Returns key: 'PeerStatus'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPeerStatus()
+    public function getPeerStatus(): ?string
     {
         return $this->getKey('PeerStatus');
     }

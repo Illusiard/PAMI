@@ -3,7 +3,7 @@ PAMI\Message\Event\ShowDialPlanCompleteEvent
 
 Event triggered for the end of the list when an action ShowDialPlan is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ShowDialPlanCompleteEvent

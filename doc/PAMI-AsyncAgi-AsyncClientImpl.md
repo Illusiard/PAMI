@@ -3,7 +3,7 @@ PAMI\AsyncAgi\AsyncClientImpl
 
 An AGI client implementation.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AsyncClientImpl

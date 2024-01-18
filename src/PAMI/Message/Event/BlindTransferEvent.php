@@ -2,12 +2,13 @@
 /**
  * Event triggered when a blind transfer is complete.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -27,36 +28,28 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
  * Event triggered when a blind transfer is complete.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class BlindTransferEvent extends EventMessage
 {
-    const RESULT_FAIL = 'Fail';
-    const RESULT_INVALID = 'Invalid';
-    const RESULT_NOT_PERMITTED = 'Not Permitted';
-    const RESULT_SUCCESS = 'Success';
-
-    /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
+    public const RESULT_FAIL          = 'Fail';
+    public const RESULT_INVALID       = 'Invalid';
+    public const RESULT_NOT_PERMITTED = 'Not Permitted';
+    public const RESULT_SUCCESS       = 'Success';
 
     /**
      * Returns key: 'Result'.
@@ -67,9 +60,9 @@ class BlindTransferEvent extends EventMessage
      * - Not Permitted - Bridge does not permit transfers
      * - Success - Transfer completed successfully
      *
-     * @return string
+     * @return ?string
      */
-    public function getResult()
+    public function getResult(): ?string
     {
         return $this->getKey('Result');
     }
@@ -77,9 +70,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererChannel()
+    public function getTransfererChannel(): ?string
     {
         return $this->getKey('TransfererChannel');
     }
@@ -88,9 +81,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'TransfererChannelState'.
      * TransfererChannelState - A numeric code for the channel's current state, related to TransfererChannelStateDesc
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererChannelState()
+    public function getTransfererChannelState(): ?string
     {
         return $this->getKey('TransfererChannelState');
     }
@@ -110,9 +103,9 @@ class BlindTransferEvent extends EventMessage
      * Pre-ring
      * Unknown
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererChannelStateDesc()
+    public function getTransfererChannelStateDesc(): ?string
     {
         return $this->getKey('TransfererChannelStateDesc');
     }
@@ -120,9 +113,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererCallerIDNum()
+    public function getTransfererCallerIDNum(): ?string
     {
         return $this->getKey('TransfererCallerIDNum');
     }
@@ -130,9 +123,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererCallerIDName()
+    public function getTransfererCallerIDName(): ?string
     {
         return $this->getKey('TransfererCallerIDName');
     }
@@ -140,9 +133,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererConnectedLineNum()
+    public function getTransfererConnectedLineNum(): ?string
     {
         return $this->getKey('TransfererConnectedLineNum');
     }
@@ -150,9 +143,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererConnectedLineName()
+    public function getTransfererConnectedLineName(): ?string
     {
         return $this->getKey('TransfererConnectedLineName');
     }
@@ -160,9 +153,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererAccountCode()
+    public function getTransfererAccountCode(): ?string
     {
         return $this->getKey('TransfererAccountCode');
     }
@@ -170,9 +163,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererContext()
+    public function getTransfererContext(): ?string
     {
         return $this->getKey('TransfererContext');
     }
@@ -180,9 +173,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererExten()
+    public function getTransfererExten(): ?string
     {
         return $this->getKey('TransfererExten');
     }
@@ -190,9 +183,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererPriority()
+    public function getTransfererPriority(): ?string
     {
         return $this->getKey('TransfererPriority');
     }
@@ -200,9 +193,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfererUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfererUniqueid()
+    public function getTransfererUniqueid(): ?string
     {
         return $this->getKey('TransfererUniqueid');
     }
@@ -210,9 +203,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannel()
+    public function getTransfereeChannel(): ?string
     {
         return $this->getKey('TransfereeChannel');
     }
@@ -221,9 +214,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'TransfereeChannelState'.
      * TransfereeChannelState - A numeric code for the channel's current state, related to TransfereeChannelStateDesc
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannelState()
+    public function getTransfereeChannelState(): ?string
     {
         return $this->getKey('TransfereeChannelState');
     }
@@ -243,9 +236,9 @@ class BlindTransferEvent extends EventMessage
      * Pre-ring
      * Unknown
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannelStateDesc()
+    public function getTransfereeChannelStateDesc(): ?string
     {
         return $this->getKey('TransfereeChannelStateDesc');
     }
@@ -253,9 +246,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeCallerIDNum()
+    public function getTransfereeCallerIDNum(): ?string
     {
         return $this->getKey('TransfereeCallerIDNum');
     }
@@ -263,9 +256,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeCallerIDName()
+    public function getTransfereeCallerIDName(): ?string
     {
         return $this->getKey('TransfereeCallerIDName');
     }
@@ -273,9 +266,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeConnectedLineNum()
+    public function getTransfereeConnectedLineNum(): ?string
     {
         return $this->getKey('TransfereeConnectedLineNum');
     }
@@ -283,9 +276,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeConnectedLineName()
+    public function getTransfereeConnectedLineName(): ?string
     {
         return $this->getKey('TransfereeConnectedLineName');
     }
@@ -293,9 +286,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeAccountCode()
+    public function getTransfereeAccountCode(): ?string
     {
         return $this->getKey('TransfereeAccountCode');
     }
@@ -303,9 +296,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeContext()
+    public function getTransfereeContext(): ?string
     {
         return $this->getKey('TransfereeContext');
     }
@@ -313,9 +306,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeExten()
+    public function getTransfereeExten(): ?string
     {
         return $this->getKey('TransfereeExten');
     }
@@ -323,9 +316,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereePriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereePriority()
+    public function getTransfereePriority(): ?string
     {
         return $this->getKey('TransfereePriority');
     }
@@ -333,9 +326,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeUniqueid()
+    public function getTransfereeUniqueid(): ?string
     {
         return $this->getKey('TransfereeUniqueid');
     }
@@ -343,9 +336,9 @@ class BlindTransferEvent extends EventMessage
     /**
      * Returns key: 'BridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): ?string
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -354,9 +347,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'BridgeType'.
      * BridgeType - The type of bridge
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeType()
+    public function getBridgeType(): ?string
     {
         return $this->getKey('BridgeType');
     }
@@ -365,9 +358,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'BridgeTechnology'.
      * BridgeTechnology - Technology in use by the bridge
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): ?string
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -376,9 +369,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'BridgeCreator'.
      * BridgeCreator - Entity that created the bridge if applicable
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): ?string
     {
         return $this->getKey('BridgeCreator');
     }
@@ -387,9 +380,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'BridgeName'.
      * BridgeName - Name used to refer to the bridge by its BridgeCreator if applicable
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeName()
+    public function getBridgeName(): ?string
     {
         return $this->getKey('BridgeName');
     }
@@ -398,9 +391,9 @@ class BlindTransferEvent extends EventMessage
      * Returns key: 'BridgeNumChannels'.
      * BridgeNumChannels - Number of channels in the bridge
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): ?string
     {
         return $this->getKey('BridgeNumChannels');
     }
@@ -413,9 +406,9 @@ class BlindTransferEvent extends EventMessage
      * Yes
      * No
      *
-     * @return string
+     * @return ?string
      */
-    public function getIsExternal()
+    public function getIsExternal(): ?string
     {
         return $this->getKey('IsExternal');
     }
@@ -426,29 +419,18 @@ class BlindTransferEvent extends EventMessage
      *
      * @return bool
      */
-    public function isExternal()
+    public function isExternal(): bool
     {
         return $this->getIsExternal() === 'Yes';
-    }
-
-    /**
-     * Returns key: 'Context'.
-     * Context - Destination context for the blind transfer.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
     }
 
     /**
      * Returns key: 'Extension'.
      * Extension - Destination extension for the blind transfer.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getKey('Extension');
     }

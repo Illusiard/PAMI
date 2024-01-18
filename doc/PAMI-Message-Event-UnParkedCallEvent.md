@@ -3,7 +3,7 @@ PAMI\Message\Event\UnParkedCallEvent
 
 Event triggered when a call is unparked.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: UnParkedCallEvent

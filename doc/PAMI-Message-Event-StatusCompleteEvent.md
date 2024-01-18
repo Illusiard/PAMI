@@ -3,7 +3,7 @@ PAMI\Message\Event\StatusCompleteEvent
 
 Event triggered for the end of the list when an action Status is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: StatusCompleteEvent

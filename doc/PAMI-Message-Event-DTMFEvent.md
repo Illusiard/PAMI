@@ -3,7 +3,7 @@ PAMI\Message\Event\DTMFEvent
 
 Event triggered when a dtmf is detected in a call.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DTMFEvent

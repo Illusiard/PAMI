@@ -3,12 +3,13 @@
  * This factory knows which event to return according to a given raw message
  * from ami.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Event
  * @subpackage Factory.Impl
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -28,6 +29,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event\Factory\Impl;
 
 use PAMI\Message\Event\EventMessage;
@@ -38,12 +40,13 @@ use PAMI\Message\Message;
  * This factory knows which event to return according to a given raw message
  * from ami.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Event
  * @subpackage Factory.Impl
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -52,28 +55,28 @@ class EventFactoryImpl
     /**
      * This is our factory method.
      *
-     * @param string $message Literall message as received from ami.
+     * @param string $message Literally message as received from ami.
      *
      * @return EventMessage
      */
-    public static function createFromRaw($message)
+    public static function createFromRaw(string $message)
     {
         $eventStart = strpos($message, 'Event: ') + 7;
-        $eventEnd = strpos($message, Message::EOL, $eventStart);
+        $eventEnd   = strpos($message, Message::EOL, $eventStart);
         if ($eventEnd === false) {
             $eventEnd = strlen($message);
         }
-        $name = substr($message, $eventStart, $eventEnd - $eventStart);
+        $name  = substr($message, $eventStart, $eventEnd - $eventStart);
         $parts = explode('_', $name);
-        $totalParts = count($parts);
-        for ($i = 0; $i < $totalParts; $i++) {
-            $parts[$i] = ucfirst($parts[$i]);
+        foreach ($parts as $i => $iValue) {
+            $parts[$i] = ucfirst($iValue);
         }
-        $name = implode('', $parts);
+        $name      = implode('', $parts);
         $className = '\\PAMI\\Message\\Event\\' . $name . 'Event';
-        if (class_exists($className, true)) {
+        if (class_exists($className)) {
             return new $className($message);
         }
+
         return new UnknownEvent($message);
     }
 

@@ -2,12 +2,13 @@
 /**
  * Challenge action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * Challenge action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,7 +50,7 @@ class ChallengeAction extends ActionMessage
      *
      * @param string $authType Auth type
      */
-    public function __construct($authType = 'MD5')
+    public function __construct(string $authType = 'MD5')
     {
         parent::__construct('Challenge');
         $this->setKey('AuthType', $authType);

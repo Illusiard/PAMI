@@ -2,12 +2,13 @@
 /**
  * Event triggered when a call is transfered.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a call is transfered.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class TransferEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'TransferMethod'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransferMethod()
+    public function getTransferMethod(): ?string
     {
         return $this->getKey('TransferMethod');
     }
@@ -68,29 +58,19 @@ class TransferEvent extends EventMessage
     /**
      * Returns key: 'TransferType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransferType()
+    public function getTransferType(): ?string
     {
         return $this->getKey('TransferType');
     }
 
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'TargetChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTargetChannel()
+    public function getTargetChannel(): ?string
     {
         return $this->getKey('TargetChannel');
     }
@@ -98,29 +78,19 @@ class TransferEvent extends EventMessage
     /**
      * Returns key: 'SIP-Callid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSipCallID()
+    public function getSipCallID(): ?string
     {
         return $this->getKey('SIP-Callid');
     }
 
     /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
      * Returns key: 'TargetUniqueID'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTargetUniqueID()
+    public function getTargetUniqueID(): ?string
     {
         return $this->getKey('TargetUniqueid');
     }
@@ -128,9 +98,9 @@ class TransferEvent extends EventMessage
     /**
      * Returns key: 'TransferExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransferExten()
+    public function getTransferExten(): ?string
     {
         return $this->getKey('TransferExten');
     }
@@ -138,9 +108,9 @@ class TransferEvent extends EventMessage
     /**
      * Returns key: 'TransferContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransferContext()
+    public function getTransferContext(): ?string
     {
         return $this->getKey('TransferContext');
     }

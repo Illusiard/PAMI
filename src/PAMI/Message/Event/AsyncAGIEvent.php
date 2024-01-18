@@ -2,12 +2,13 @@
 /**
  * Event triggered when an async agi is executed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,58 +30,37 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an async agi is executed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class AsyncAGIEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'SubEvent'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSubEvent()
+    public function getSubEvent(): ?string
     {
         return $this->getKey('SubEvent');
     }
 
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns the original environment received with this event.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEnvironment()
+    public function getEnvironment(): ?string
     {
         return $this->getKey('Env');
     }
@@ -88,9 +68,9 @@ class AsyncAGIEvent extends EventMessage
     /**
      * Returns the agi result for the command issued.
      *
-     * @return string
+     * @return ?string
      */
-    public function getResult()
+    public function getResult(): ?string
     {
         return $this->getKey('Result');
     }
@@ -98,9 +78,9 @@ class AsyncAGIEvent extends EventMessage
     /**
      * Returns the command id associated with this event.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCommandId()
+    public function getCommandId(): ?string
     {
         return $this->getKey('CommandId');
     }
@@ -111,7 +91,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return void
      */
-    public function __construct($rawContent)
+    public function __construct(string $rawContent)
     {
         parent::__construct($rawContent);
         $this->setKey('Env', urldecode($this->getEnvironment()));

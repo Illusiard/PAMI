@@ -3,7 +3,7 @@ PAMI\Message\Event\HoldEvent
 
 Event triggered when an extension is put on hold.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: HoldEvent

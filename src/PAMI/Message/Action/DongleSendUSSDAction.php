@@ -2,12 +2,13 @@
 /**
  * Send a USSD through dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * Send a USSD through dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -51,7 +53,7 @@ class DongleSendUSSDAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($device, $ussd)
+    public function __construct(string $device, string $ussd)
     {
         parent::__construct('DongleSendUSSD');
         $this->setKey('Device', $device);

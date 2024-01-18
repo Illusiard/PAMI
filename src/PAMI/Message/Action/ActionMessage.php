@@ -2,7 +2,7 @@
 /**
  * A generic action ami message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Message
@@ -34,7 +34,7 @@ use PAMI\Exception\PAMIException;
 /**
  * A generic action ami message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Message
@@ -51,7 +51,7 @@ abstract class ActionMessage extends OutgoingMessage
      *
      * @return void
      */
-    public function __construct($what)
+    public function __construct(string $what)
     {
         parent::__construct();
         $this->setKey('Action', $what);
@@ -64,16 +64,16 @@ abstract class ActionMessage extends OutgoingMessage
      * The ActionID can be at most 69 characters long, according to
      * {@link https://issues.asterisk.org/jira/browse/14847 Asterisk Issue 14847}.
      *
-     * Therefore we'll throw an exception when the ActionID is too long.
+     * Therefore, we'll throw an exception when the ActionID is too long.
      *
-     * @param $actionID The Action ID to have this action known by
+     * @param ?string $actionID The Action ID to have this action known by
      *
      * @return void
-     * @throws PAMIException When the ActionID is more then 69 characters long
+     * @throws PAMIException When the ActionID is more than 69 characters long
      */
-    public function setActionID($actionID)
+    public function setActionID(?string $actionID): void
     {
-        if (0 == strlen($actionID)) {
+        if (empty($actionID)) {
             throw new PAMIException('ActionID cannot be empty.');
         }
 

@@ -3,12 +3,13 @@
  * Event triggered for Jabber Activity. A contribution from
  * Richard Baar.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -30,12 +31,10 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event Jabber
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -47,21 +46,11 @@ use PAMI\Message\Event\EventMessage;
 class JabberEventEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Account'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAccount()
+    public function getAccount(): ?string
     {
         return $this->getKey('Account');
     }
@@ -69,9 +58,9 @@ class JabberEventEvent extends EventMessage
     /**
      * Returns key: 'Packet'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPacket()
+    public function getPacket(): ?string
     {
         return $this->getKey('Packet');
     }

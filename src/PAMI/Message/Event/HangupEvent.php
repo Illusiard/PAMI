@@ -2,12 +2,13 @@
 /**
  * Triggered when a hangup is detected.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,78 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Triggered when a hangup is detected.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class HangupEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
+     * Returns key: Cause
      *
-     * @return string
+     * @return ?string
      */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
-     * Returns key: 'Cause'.
-     *
-     * @return string
-     */
-    public function getCause()
+    public function getCause(): ?string
     {
         return $this->getKey('Cause');
     }
@@ -108,9 +58,9 @@ class HangupEvent extends EventMessage
     /**
      * Returns key: 'Cause-txt'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCauseText()
+    public function getCauseText(): ?string
     {
         return $this->getKey('Cause-txt');
     }

@@ -3,7 +3,7 @@ PAMI\Message\Event\QueueMemberPausedEvent
 
 Event triggered for a change in a queue member (pause/unpause).
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueMemberPausedEvent

@@ -3,7 +3,7 @@ PAMI\Message\Action\ListCommandsAction
 
 Lists avaiable manager actions.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ListCommandsAction

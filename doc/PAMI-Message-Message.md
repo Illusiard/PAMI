@@ -3,7 +3,7 @@ PAMI\Message\Message
 
 A generic ami message, in-or-outbound.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: Message

@@ -3,7 +3,7 @@
 /**
  * PAMI basic use example.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @author   Marcelo Gornstein <marcelog@gmail.com>
@@ -60,7 +60,7 @@ class ListenerTest implements IEventListener
     private $_id;
     private $_pamiOptions;
 
-    public function handle(EventMessage $event)
+    public function handle(EventMessage $event): void
     {
         if ($event instanceof \PAMI\Message\Event\AsyncAGIEvent) {
             if ($event->getSubEvent() == 'Start') {

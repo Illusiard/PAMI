@@ -7,7 +7,7 @@ input and output channels. Also, the filename is mandatory:
 Mix: true
 Format: wav
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: MonitorAction

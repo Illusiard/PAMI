@@ -3,7 +3,7 @@ PAMI\Message\Event\ParkedCallEvent
 
 Event triggered when a call is parked.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ParkedCallEvent

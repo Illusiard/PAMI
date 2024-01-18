@@ -2,12 +2,13 @@
 /**
  * ExtensionState action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * ExtensionState action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -51,7 +53,7 @@ class ExtensionStateAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($exten, $context)
+    public function __construct(string $exten, string $context)
     {
         parent::__construct('ExtensionState');
         $this->setKey('Exten', $exten);

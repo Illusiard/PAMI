@@ -2,12 +2,13 @@
 /**
  * Event triggered when a channel starts AsyncAGI command processing.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,153 +33,24 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a channel starts AsyncAGI command processing.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class AsyncAGIStartEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
-    }
-
-    /**
      * Returns key: 'Env'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEnv()
+    public function getEnv(): ?string
     {
         return $this->getKey('Env');
     }
@@ -188,7 +60,7 @@ class AsyncAGIStartEvent extends EventMessage
      *
      * @param string $rawContent Literal message as received from ami.
      */
-    public function __construct($rawContent)
+    public function __construct(string $rawContent)
     {
         parent::__construct($rawContent);
         $this->setKey('Env', urldecode($this->getEnv()));

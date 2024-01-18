@@ -3,7 +3,7 @@ PAMI\Message\Event\UnlinkEvent
 
 Event triggered when a bridged channel is unlinked.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: UnlinkEvent

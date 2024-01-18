@@ -2,12 +2,13 @@
 /**
  * Event triggered when a caller abandons the queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,153 +33,24 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a caller abandons the queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class QueueCallerAbandonEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
@@ -186,9 +58,9 @@ class QueueCallerAbandonEvent extends EventMessage
     /**
      * Returns key: 'Position'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPosition()
+    public function getPosition(): ?string
     {
         return $this->getKey('Position');
     }
@@ -196,9 +68,9 @@ class QueueCallerAbandonEvent extends EventMessage
     /**
      * Returns key: 'OriginalPosition'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOriginalPosition()
+    public function getOriginalPosition(): ?string
     {
         return $this->getKey('OriginalPosition');
     }
@@ -206,9 +78,9 @@ class QueueCallerAbandonEvent extends EventMessage
     /**
      * Returns key: 'HoldTime'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getHoldTime()
+    public function getHoldTime(): ?string
     {
         return $this->getKey('HoldTime');
     }

@@ -2,12 +2,13 @@
 /**
  * Redirect action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * Redirect action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -50,7 +52,7 @@ class RedirectAction extends ActionMessage
      *
      * @return void
      */
-    public function setExtraChannel($channel)
+    public function setExtraChannel(string $channel): void
     {
         $this->setKey('ExtraChannel', $channel);
     }
@@ -58,11 +60,11 @@ class RedirectAction extends ActionMessage
     /**
      * Sets key ExtraExten.
      *
-     * @param string $extension Extension to transfer extrachannel to (optional).
+     * @param string $extension Extension to transfer extra channel to (optional).
      *
      * @return void
      */
-    public function setExtraExtension($extension)
+    public function setExtraExtension(string $extension): void
     {
         $this->setKey('ExtraExten', $extension);
     }
@@ -70,11 +72,11 @@ class RedirectAction extends ActionMessage
     /**
      * Sets key ExtraContext.
      *
-     * @param string $context Context to transfer extrachannel to (optional).
+     * @param string $context Context to transfer extra channel to (optional).
      *
      * @return void
      */
-    public function setExtraContext($context)
+    public function setExtraContext(string $context): void
     {
         $this->setKey('ExtraContext', $context);
     }
@@ -82,11 +84,11 @@ class RedirectAction extends ActionMessage
     /**
      * Sets key ExtraPriority.
      *
-     * @param string $priority Priority to transfer extrachannel to (optional).
+     * @param string $priority Priority to transfer extra channel to (optional).
      *
      * @return void
      */
-    public function setExtraPriority($priority)
+    public function setExtraPriority(string $priority): void
     {
         $this->setKey('ExtraPriority', $priority);
     }
@@ -101,7 +103,7 @@ class RedirectAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($channel, $extension, $context, $priority)
+    public function __construct(string $channel, string $extension, string $context, string $priority)
     {
         parent::__construct('Redirect');
         $this->setKey('Channel', $channel);

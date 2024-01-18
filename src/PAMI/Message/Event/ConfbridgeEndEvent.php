@@ -2,12 +2,13 @@
 /**
  * Event triggered when a confbridge is destroyed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,94 +33,16 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a confbridge is destroyed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ConfbridgeEndEvent extends EventMessage
+class ConfbridgeEndEvent extends BaseSingleConfbridgeEvent
 {
-    /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Conference'.
-     *
-     * @return string
-     */
-    public function getConference()
-    {
-        return $this->getKey('Conference');
-    }
-
-    /**
-     * Returns key: 'BridgeUniqueid'.
-     *
-     * @return string
-     */
-    public function getBridgeUniqueid()
-    {
-        return $this->getKey('BridgeUniqueid');
-    }
-
-    /**
-     * Returns key: 'BridgeType'.
-     *
-     * @return string
-     */
-    public function getBridgeType()
-    {
-        return $this->getKey('BridgeType');
-    }
-
-    /**
-     * Returns key: 'BridgeTechnology'.
-     *
-     * @return string
-     */
-    public function getBridgeTechnology()
-    {
-        return $this->getKey('BridgeTechnology');
-    }
-
-    /**
-     * Returns key: 'BridgeCreator'.
-     *
-     * @return string
-     */
-    public function getBridgeCreator()
-    {
-        return $this->getKey('BridgeCreator');
-    }
-
-    /**
-     * Returns key: 'BridgeName'.
-     *
-     * @return string
-     */
-    public function getBridgeName()
-    {
-        return $this->getKey('BridgeName');
-    }
-
-    /**
-     * Returns key: 'BridgeNumChannels'.
-     *
-     * @return string
-     */
-    public function getBridgeNumChannels()
-    {
-        return $this->getKey('BridgeNumChannels');
-    }
 }

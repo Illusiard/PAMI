@@ -2,7 +2,7 @@
 /**
  * StopMixMonitor action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 /**
  * StopMixMonitor action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -50,7 +50,7 @@ class StopMixMonitorAction extends ActionMessage
      *
      * @return void
      */
-    public function setMixMonitorId($mixMonitorId)
+    public function setMixMonitorId(string $mixMonitorId): void
     {
         $this->setKey('MixMonitorID', $mixMonitorId);
     }
@@ -62,7 +62,7 @@ class StopMixMonitorAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($channel)
+    public function __construct(string $channel)
     {
         parent::__construct('StopMixMonitor');
         $this->setKey('Channel', $channel);

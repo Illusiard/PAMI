@@ -2,12 +2,13 @@
 /**
  * Event triggered when a call is unparked.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,132 +33,123 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a call is unparked.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class UnParkedCallEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Parkinglot'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkinglot()
+    public function getParkinglot(): ?string
     {
         return $this->getKey('Parkinglot');
     }
 
     /**
      * Returns key: 'From'.
-     * @deprecated Deprecated since Asterisk 12. {@use getRetrieverChannel()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getRetrieverChannel()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFrom()
+    public function getFrom(): ?string
     {
         return $this->getRetrieverChannel();
     }
 
     /**
      * Returns key: 'Timeout'.
-     * @deprecated Deprecated since Asterisk 12. {@use ParkingTimeout()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkingTimeout()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTimeout()
+    public function getTimeout(): ?string
     {
         return $this->getParkingTimeout();
     }
 
     /**
      * Returns key: 'ConnectedLineNum'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeConnectedLineNum()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeConnectedLineNum()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): ?string
     {
         return $this->getParkeeConnectedLineNum();
     }
 
     /**
      * Returns key: 'ConnectedLineName'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeConnectedLineName()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeConnectedLineName()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): ?string
     {
         return $this->getParkeeConnectedLineName();
     }
 
     /**
      * Returns key: 'Channel'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeChannel()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeChannel()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannel()
+    public function getChannel(): ?string
     {
         return $this->getParkeeChannel();
     }
 
     /**
      * Returns key: 'CallerIDNum'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeCallerIDNum()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeCallerIDNum()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): ?string
     {
         return $this->getParkeeCallerIDNum();
     }
 
     /**
      * Returns key: 'CallerIDName'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeCallerIDName()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeCallerIDName()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): ?string
     {
         return $this->getParkeeCallerIDName();
     }
 
     /**
      * Returns key: 'UniqueID'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkeeUniqueid()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkeeUniqueid()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUniqueID()
+    public function getUniqueID(): ?string
     {
         return $this->getParkeeUniqueid();
     }
 
     /**
      * Returns key: 'Exten'.
-     * @deprecated Deprecated since Asterisk 12. {@use getParkingSpace()}.
+     * @deprecated Deprecated since Asterisk 12. {@use self::getParkingSpace()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getParkingSpace();
     }
@@ -165,9 +157,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeChannel()
+    public function getParkeeChannel(): ?string
     {
         return $this->getKey('ParkeeChannel') ?: $this->getKey('Channel');
     }
@@ -175,9 +167,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeChannelState()
+    public function getParkeeChannelState(): ?string
     {
         return $this->getKey('ParkeeChannelState');
     }
@@ -185,9 +177,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeChannelStateDesc()
+    public function getParkeeChannelStateDesc(): ?string
     {
         return $this->getKey('ParkeeChannelStateDesc');
     }
@@ -195,9 +187,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeCallerIDNum()
+    public function getParkeeCallerIDNum(): ?string
     {
         return $this->getKey('ParkeeCallerIDNum') ?: $this->getKey('CallerIDNum');
     }
@@ -205,9 +197,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeCallerIDName()
+    public function getParkeeCallerIDName(): ?string
     {
         return $this->getKey('ParkeeCallerIDName') ?: $this->getKey('CallerIDName');
     }
@@ -215,9 +207,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeConnectedLineNum()
+    public function getParkeeConnectedLineNum(): ?string
     {
         return $this->getKey('ParkeeConnectedLineNum') ?: $this->getKey('ConnectedLineNum');
     }
@@ -225,9 +217,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeConnectedLineName()
+    public function getParkeeConnectedLineName(): ?string
     {
         return $this->getKey('ParkeeConnectedLineName') ?: $this->getKey('ConnectedLineName');
     }
@@ -235,9 +227,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeAccountCode()
+    public function getParkeeAccountCode(): ?string
     {
         return $this->getKey('ParkeeAccountCode');
     }
@@ -245,9 +237,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeContext()
+    public function getParkeeContext(): ?string
     {
         return $this->getKey('ParkeeContext');
     }
@@ -255,9 +247,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeExten()
+    public function getParkeeExten(): ?string
     {
         return $this->getKey('ParkeeExten');
     }
@@ -265,9 +257,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeePriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeePriority()
+    public function getParkeePriority(): ?string
     {
         return $this->getKey('ParkeePriority');
     }
@@ -275,9 +267,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkeeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkeeUniqueid()
+    public function getParkeeUniqueid(): ?string
     {
         return $this->getKey('ParkeeUniqueid') ?: $this->getKey('UniqueId');
     }
@@ -285,9 +277,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerDialString'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerDialString()
+    public function getParkerDialString(): ?string
     {
         return $this->getKey('ParkerDialString');
     }
@@ -295,9 +287,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkingSpace'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkingSpace()
+    public function getParkingSpace(): ?string
     {
         return $this->getKey('ParkingSpace') ?: $this->getKey('Exten');
     }
@@ -305,9 +297,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkingTimeout'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkingTimeout()
+    public function getParkingTimeout(): ?string
     {
         return $this->getKey('ParkingTimeout') ?: $this->getKey('Timeout');
     }
@@ -315,9 +307,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkingDuration'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkingDuration()
+    public function getParkingDuration(): ?string
     {
         return $this->getKey('ParkingDuration');
     }
@@ -325,9 +317,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerChannel()
+    public function getParkerChannel(): ?string
     {
         return $this->getKey('ParkerChannel');
     }
@@ -335,9 +327,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerChannelState()
+    public function getParkerChannelState(): ?string
     {
         return $this->getKey('ParkerChannelState');
     }
@@ -345,9 +337,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerChannelStateDesc()
+    public function getParkerChannelStateDesc(): ?string
     {
         return $this->getKey('ParkerChannelStateDesc');
     }
@@ -355,9 +347,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerCallerIDNum()
+    public function getParkerCallerIDNum(): ?string
     {
         return $this->getKey('ParkerCallerIDNum');
     }
@@ -365,9 +357,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerCallerIDName()
+    public function getParkerCallerIDName(): ?string
     {
         return $this->getKey('ParkerCallerIDName');
     }
@@ -375,9 +367,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerConnectedLineNum()
+    public function getParkerConnectedLineNum(): ?string
     {
         return $this->getKey('ParkerConnectedLineNum');
     }
@@ -385,9 +377,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerConnectedLineName()
+    public function getParkerConnectedLineName(): ?string
     {
         return $this->getKey('ParkerConnectedLineName');
     }
@@ -395,9 +387,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerAccountCode()
+    public function getParkerAccountCode(): ?string
     {
         return $this->getKey('ParkerAccountCode');
     }
@@ -405,9 +397,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerContext()
+    public function getParkerContext(): ?string
     {
         return $this->getKey('ParkerContext');
     }
@@ -415,9 +407,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerExten()
+    public function getParkerExten(): ?string
     {
         return $this->getKey('ParkerExten');
     }
@@ -425,9 +417,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerPriority()
+    public function getParkerPriority(): ?string
     {
         return $this->getKey('ParkerPriority');
     }
@@ -435,9 +427,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'ParkerUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getParkerUniqueid()
+    public function getParkerUniqueid(): ?string
     {
         return $this->getKey('ParkerUniqueid');
     }
@@ -445,9 +437,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverChannel()
+    public function getRetrieverChannel(): ?string
     {
         return $this->getKey('RetrieverChannel') ?: $this->getKey('From');
     }
@@ -455,9 +447,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverChannelState()
+    public function getRetrieverChannelState(): ?string
     {
         return $this->getKey('RetrieverChannelState');
     }
@@ -465,9 +457,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverChannelStateDesc()
+    public function getRetrieverChannelStateDesc(): ?string
     {
         return $this->getKey('RetrieverChannelStateDesc');
     }
@@ -475,9 +467,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverCallerIDNum()
+    public function getRetrieverCallerIDNum(): ?string
     {
         return $this->getKey('RetrieverCallerIDNum');
     }
@@ -485,9 +477,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverCallerIDName()
+    public function getRetrieverCallerIDName(): ?string
     {
         return $this->getKey('RetrieverCallerIDName');
     }
@@ -495,9 +487,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverConnectedLineNum()
+    public function getRetrieverConnectedLineNum(): ?string
     {
         return $this->getKey('RetrieverConnectedLineNum');
     }
@@ -505,9 +497,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverConnectedLineName()
+    public function getRetrieverConnectedLineName(): ?string
     {
         return $this->getKey('RetrieverConnectedLineName');
     }
@@ -515,9 +507,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverAccountCode()
+    public function getRetrieverAccountCode(): ?string
     {
         return $this->getKey('RetrieverAccountCode');
     }
@@ -525,9 +517,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverContext()
+    public function getRetrieverContext(): ?string
     {
         return $this->getKey('RetrieverContext');
     }
@@ -535,9 +527,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverExten()
+    public function getRetrieverExten(): ?string
     {
         return $this->getKey('RetrieverExten');
     }
@@ -545,9 +537,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverPriority()
+    public function getRetrieverPriority(): ?string
     {
         return $this->getKey('RetrieverPriority');
     }
@@ -555,9 +547,9 @@ class UnParkedCallEvent extends EventMessage
     /**
      * Returns key: 'RetrieverUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRetrieverUniqueid()
+    public function getRetrieverUniqueid(): ?string
     {
         return $this->getKey('RetrieverUniqueid');
     }

@@ -2,12 +2,13 @@
 /**
  * Event triggered when a new extension is accessed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,44 +33,25 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a new extension is accessed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class NewextenEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'Extension'.
      * @deprecated Please use {@see getExten()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getKey('Extension');
     }
@@ -77,39 +59,19 @@ class NewextenEvent extends EventMessage
     /**
      * Returns key: 'Exten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExten()
+    public function getExten(): ?string
     {
         return $this->getKey('Exten') ?: $this->getKey('Extension');
     }
 
     /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
      * Returns key: 'Application'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplication()
+    public function getApplication(): ?string
     {
         return $this->getKey('Application');
     }
@@ -117,20 +79,11 @@ class NewextenEvent extends EventMessage
     /**
      * Returns key: 'AppData'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplicationData()
+    public function getApplicationData(): ?string
     {
         return $this->getKey('AppData');
     }
 
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
 }

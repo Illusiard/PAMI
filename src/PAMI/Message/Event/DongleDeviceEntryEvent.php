@@ -2,12 +2,13 @@
 /**
  * Event triggered when getting a dongle device.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when getting a dongle device.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Device'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDevice()
+    public function getDevice(): ?string
     {
         return $this->getKey('Device');
     }
@@ -58,9 +58,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'AudioSetting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAudioSetting()
+    public function getAudioSetting(): ?string
     {
         return $this->getKey('AudioSetting');
     }
@@ -68,9 +68,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DataSetting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDataSetting()
+    public function getDataSetting(): ?string
     {
         return $this->getKey('DataSetting');
     }
@@ -78,9 +78,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'IMEISetting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIMEISetting()
+    public function getIMEISetting(): ?string
     {
         return $this->getKey('IMEISetting');
     }
@@ -88,9 +88,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'IMSISetting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIMSISetting()
+    public function getIMSISetting(): ?string
     {
         return $this->getKey('IMSISetting');
     }
@@ -98,39 +98,19 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'ChannelLanguage'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannelLanguage()
+    public function getChannelLanguage(): ?string
     {
         return $this->getKey('ChannelLanguage');
     }
 
     /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
      * Returns key: 'Group'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getGroup()
+    public function getGroup(): ?string
     {
         return $this->getKey('Group');
     }
@@ -138,9 +118,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'RXGain'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRXGain()
+    public function getRXGain(): ?string
     {
         return $this->getKey('RXGain');
     }
@@ -148,9 +128,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'TXGain'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTXGain()
+    public function getTXGain(): ?string
     {
         return $this->getKey('TXGain');
     }
@@ -158,9 +138,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'U2DIAG'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getU2DIAG()
+    public function getU2DIAG(): ?string
     {
         return $this->getKey('U2DIAG');
     }
@@ -168,9 +148,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'UseCallingPres'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUseCallingPres()
+    public function getUseCallingPres(): ?string
     {
         return $this->getKey('UseCallingPres');
     }
@@ -178,9 +158,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DefaultCallingPres'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDefaultCallingPres()
+    public function getDefaultCallingPres(): ?string
     {
         return $this->getKey('DefaultCallingPres');
     }
@@ -188,9 +168,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'AutoDeleteSMS'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAutoDeleteSMS()
+    public function getAutoDeleteSMS(): ?string
     {
         return $this->getKey('AutoDeleteSMS');
     }
@@ -198,9 +178,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DisableSMS'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDisableSMS()
+    public function getDisableSMS(): ?string
     {
         return $this->getKey('DisableSMS');
     }
@@ -208,9 +188,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'ResetDongle'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getResetDongle()
+    public function getResetDongle(): ?string
     {
         return $this->getKey('ResetDongle');
     }
@@ -218,9 +198,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'SMSPDU'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSMSPDU()
+    public function getSMSPDU(): ?string
     {
         return $this->getKey('SMSPDU');
     }
@@ -228,9 +208,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CallWaitingSetting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallWaitingSetting()
+    public function getCallWaitingSetting(): ?string
     {
         return $this->getKey('CallWaitingSetting');
     }
@@ -238,9 +218,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DTMF'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDTMF()
+    public function getDTMF(): ?string
     {
         return $this->getKey('DTMF');
     }
@@ -248,9 +228,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'MinimalDTMFGap'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMinimalDTMFGap()
+    public function getMinimalDTMFGap(): ?string
     {
         return $this->getKey('MinimalDTMFGap');
     }
@@ -258,9 +238,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'MinimalDTMFDuration'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMinimalDTMFDuration()
+    public function getMinimalDTMFDuration(): ?string
     {
         return $this->getKey('MinimalDTMFDuration');
     }
@@ -268,9 +248,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'MinimalDTMFInterval'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMinimalDTMFInterval()
+    public function getMinimalDTMFInterval(): ?string
     {
         return $this->getKey('MinimalDTMFInterval');
     }
@@ -278,9 +258,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'State'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getState()
+    public function getState(): ?string
     {
         return $this->getKey('State');
     }
@@ -288,9 +268,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'AudioState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAudioState()
+    public function getAudioState(): ?string
     {
         return $this->getKey('AudioState');
     }
@@ -298,9 +278,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DataState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDataState()
+    public function getDataState(): ?string
     {
         return $this->getKey('DataState');
     }
@@ -308,9 +288,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Voice'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getVoice()
+    public function getVoice(): ?string
     {
         return $this->getKey('Voice');
     }
@@ -318,9 +298,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'SMS'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSMS()
+    public function getSMS(): ?string
     {
         return $this->getKey('SMS');
     }
@@ -328,9 +308,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Manufacturer'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getManufacturer()
+    public function getManufacturer(): ?string
     {
         return $this->getKey('Manufacturer');
     }
@@ -338,9 +318,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Model'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getModel()
+    public function getModel(): ?string
     {
         return $this->getKey('Model');
     }
@@ -348,9 +328,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Firmware'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFirmware()
+    public function getFirmware(): ?string
     {
         return $this->getKey('Firmware');
     }
@@ -358,9 +338,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'IMEIState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIMEIState()
+    public function getIMEIState(): ?string
     {
         return $this->getKey('IMEIState');
     }
@@ -368,9 +348,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'IMSIState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIMSIState()
+    public function getIMSIState(): ?string
     {
         return $this->getKey('IMSIState');
     }
@@ -378,9 +358,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'GSMRegistrationStatus'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getGSMRegistrationStatus()
+    public function getGSMRegistrationStatus(): ?string
     {
         return $this->getKey('GSMRegistrationStatus');
     }
@@ -388,9 +368,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'RSSI'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRSSI()
+    public function getRSSI(): ?string
     {
         return $this->getKey('RSSI');
     }
@@ -398,9 +378,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Mode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMode()
+    public function getMode(): ?string
     {
         return $this->getKey('Mode');
     }
@@ -408,9 +388,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Submode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSubmode()
+    public function getSubmode(): ?string
     {
         return $this->getKey('Submode');
     }
@@ -418,9 +398,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'ProviderName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getProviderName()
+    public function getProviderName(): ?string
     {
         return $this->getKey('ProviderName');
     }
@@ -428,9 +408,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'LocationAreaCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocationAreaCode()
+    public function getLocationAreaCode(): ?string
     {
         return $this->getKey('LocationAreaCode');
     }
@@ -438,9 +418,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CellID'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCellID()
+    public function getCellID(): ?string
     {
         return $this->getKey('CellID');
     }
@@ -448,9 +428,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'SubscriberNumber'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSubscriberNumber()
+    public function getSubscriberNumber(): ?string
     {
         return $this->getKey('SubscriberNumber');
     }
@@ -458,9 +438,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'SMSServiceCenter'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSMSServiceCenter()
+    public function getSMSServiceCenter(): ?string
     {
         return $this->getKey('SMSServiceCenter');
     }
@@ -468,9 +448,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'UseUCS2Encoding'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUseUCS2Encoding()
+    public function getUseUCS2Encoding(): ?string
     {
         return $this->getKey('UseUCS2Encoding');
     }
@@ -478,9 +458,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'USSDUse7BitEncoding'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUSSDUse7BitEncoding()
+    public function getUSSDUse7BitEncoding(): ?string
     {
         return $this->getKey('USSDUse7BitEncoding');
     }
@@ -488,9 +468,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'USSDUseUCS2Decoding'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUSSDUseUCS2Decoding()
+    public function getUSSDUseUCS2Decoding(): ?string
     {
         return $this->getKey('USSDUseUCS2Decoding');
     }
@@ -498,9 +478,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'TasksInQueue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTasksInQueue()
+    public function getTasksInQueue(): ?string
     {
         return $this->getKey('TasksInQueue');
     }
@@ -508,9 +488,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CommandsInQueue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCommandsInQueue()
+    public function getCommandsInQueue(): ?string
     {
         return $this->getKey('CommandsInQueue');
     }
@@ -518,9 +498,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CallWaitingState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallWaitingState()
+    public function getCallWaitingState(): ?string
     {
         return $this->getKey('CallWaitingState');
     }
@@ -528,9 +508,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CurrentDeviceState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCurrentDeviceState()
+    public function getCurrentDeviceState(): ?string
     {
         return $this->getKey('CurrentDeviceState');
     }
@@ -538,9 +518,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'DesiredDeviceState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDesiredDeviceState()
+    public function getDesiredDeviceState(): ?string
     {
         return $this->getKey('DesiredDeviceState');
     }
@@ -548,9 +528,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'CallsChannels'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallsChannels()
+    public function getCallsChannels(): ?string
     {
         return $this->getKey('CallsChannels');
     }
@@ -558,9 +538,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Active'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getActive()
+    public function getActive(): ?string
     {
         return $this->getKey('Active');
     }
@@ -568,9 +548,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Held'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getHeld()
+    public function getHeld(): ?string
     {
         return $this->getKey('Held');
     }
@@ -578,9 +558,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Dialing'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDialing()
+    public function getDialing(): ?string
     {
         return $this->getKey('Dialing');
     }
@@ -588,9 +568,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Alerting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAlerting()
+    public function getAlerting(): ?string
     {
         return $this->getKey('Alerting');
     }
@@ -598,9 +578,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Incoming'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIncoming()
+    public function getIncoming(): ?string
     {
         return $this->getKey('Incoming');
     }
@@ -608,9 +588,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Waiting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getWaiting()
+    public function getWaiting(): ?string
     {
         return $this->getKey('Waiting');
     }
@@ -618,9 +598,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Releasing'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getReleasing()
+    public function getReleasing(): ?string
     {
         return $this->getKey('Releasing');
     }
@@ -628,9 +608,9 @@ class DongleDeviceEntryEvent extends EventMessage
     /**
      * Returns key: 'Initializing'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getInitializing()
+    public function getInitializing(): ?string
     {
         return $this->getKey('Initializing');
     }

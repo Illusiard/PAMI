@@ -1,9 +1,9 @@
 PAMI\Message\Event\DongleUSSDStatusEvent
 ===============
 
-Event triggered when a ussd was queued for sent by dongle.
+Event triggered when an ussd was queued for sent by dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleUSSDStatusEvent

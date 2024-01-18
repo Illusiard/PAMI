@@ -3,7 +3,7 @@ PAMI\Message\Event\AGIExecEvent
 
 Event triggered when an agi executes an application.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AGIExecEvent

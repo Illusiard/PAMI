@@ -2,7 +2,7 @@
 /**
  * ConfbridgeList action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 /**
  * Lists all users in a particular ConfBridge conference.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -50,7 +50,7 @@ class ConfbridgeListAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($conference)
+    public function __construct(string $conference)
     {
         parent::__construct('ConfbridgeList');
         $this->setKey('Conference', $conference);

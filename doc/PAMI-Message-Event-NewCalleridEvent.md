@@ -3,7 +3,7 @@ PAMI\Message\Event\NewCalleridEvent
 
 Event triggered when a caller id is used.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: NewCalleridEvent

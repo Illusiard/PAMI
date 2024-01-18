@@ -2,12 +2,13 @@
 /**
  * DBDelTree action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * DBDelTree action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,16 +48,16 @@ class DBDelTreeAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $family Family.
-     * @param string $key    Name (optional)
+     * @param string  $family Family.
+     * @param ?string $key    Name (optional)
      *
      * @return void
      */
-    public function __construct($family, $key = false)
+    public function __construct(string $family, ?string $key = null)
     {
         parent::__construct('DBDelTree');
         $this->setKey('Family', $family);
-        if ($key != false) {
+        if ($key) {
             $this->setKey('Key', $key);
         }
     }

@@ -2,12 +2,13 @@
 /**
  * Event triggered for agents.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for agents.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class AgentsEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }
@@ -58,9 +58,9 @@ class AgentsEvent extends EventMessage
     /**
      * Returns key: 'Agent'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAgent()
+    public function getAgent(): ?string
     {
         return $this->getKey('Agent');
     }
@@ -68,9 +68,9 @@ class AgentsEvent extends EventMessage
     /**
      * Returns key: 'Name'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->getKey('Name');
     }
@@ -78,9 +78,9 @@ class AgentsEvent extends EventMessage
     /**
      * Returns key: 'LoggedInChan'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannel()
+    public function getChannel(): ?string
     {
         return $this->getKey('LoggedInChan');
     }
@@ -88,30 +88,30 @@ class AgentsEvent extends EventMessage
     /**
      * Returns key: 'LoggedInTime'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getLoggedInTime()
+    public function getLoggedInTime(): ?int
     {
-        return $this->getKey('LoggedInTime');
+        return (int)$this->getKey('LoggedInTime') ?: null;
     }
 
     /**
      * Returns key: 'TalkingTo'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getTalkingTo()
+    public function getTalkingTo(): ?int
     {
-        return $this->getKey('TalkingTo');
+        return (int)$this->getKey('TalkingTo') ?: null;
     }
 
     /**
      * Returns key: 'TalkingToChannel'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getTalkingToChannel()
+    public function getTalkingToChannel(): ?int
     {
-        return $this->getKey('TalkingToChannel');
+        return (int)$this->getKey('TalkingToChannel') ?: null;
     }
 }

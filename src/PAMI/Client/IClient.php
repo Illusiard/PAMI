@@ -2,7 +2,7 @@
 /**
  * Interface for an ami client.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Client
@@ -28,14 +28,16 @@
  */
 namespace PAMI\Client;
 
+use Closure;
+use PAMI\Client\Exception\ClientException;
 use PAMI\Message\OutgoingMessage;
+use PAMI\Message\Response\ResponseMessage;
 use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 
 /**
  * Interface for an ami client.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Client
@@ -49,10 +51,10 @@ interface IClient
     /**
      * Opens a tcp connection to ami.
      *
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      * @return void
      */
-    public function open();
+    public function open(): void;
 
     /**
      * Main processing loop. Also called from send(), you should call this in
@@ -61,11 +63,11 @@ interface IClient
      *
      * @return void
      */
-    public function process();
+    public function process(): void;
 
     /**
      * Registers the given listener so it can receive events. Returns the generated
-     * id for this new listener. You can pass in a an IEventListener, a Closure,
+     * id for this new listener. You can pass in an IEventListener, a Closure,
      * and an array containing the object and name of the method to invoke. Can specify
      * an optional predicate to invoke before calling the callback.
      *
@@ -74,7 +76,7 @@ interface IClient
      *
      * @return string
      */
-    public function registerEventListener($listener, $predicate = null);
+    public function registerEventListener($listener, ?Closure $predicate = null): string;
 
     /**
      * Unregisters an event listener.
@@ -83,14 +85,14 @@ interface IClient
      *
      * @return void
      */
-    public function unregisterEventListener($listenerId);
+    public function unregisterEventListener(string $listenerId): void;
 
     /**
      * Closes the connection to ami.
      *
      * @return void
      */
-    public function close();
+    public function close(): void;
 
     /**
      * Sends a message to ami.
@@ -98,17 +100,17 @@ interface IClient
      * @param OutgoingMessage $message Message to send.
      *
      * @see ClientImpl::send()
-     * @throws \PAMI\Client\Exception\ClientException
-     * @return \PAMI\Message\Response\ResponseMessage
+     * @throws ClientException
+     * @return ResponseMessage
      */
-    public function send(OutgoingMessage $message);
+    public function send(OutgoingMessage $message): ResponseMessage;
 
     /**
      * Sets the logger implementation.
      *
-     * @param Psr\Log\LoggerInterface $logger The PSR3-Logger
+     * @param LoggerInterface $logger The PSR3-Logger
      *
      * @return void
      */
-    public function setLogger(LoggerInterface $logger);
+    public function setLogger(LoggerInterface $logger): void;
 }

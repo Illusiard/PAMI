@@ -2,7 +2,7 @@
 /**
  * MixMonitor action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 /**
  * MixMonitor action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -50,7 +50,7 @@ class MixMonitorAction extends ActionMessage
      *
      * @return void
      */
-    public function setFile($file)
+    public function setFile(string $file): void
     {
         $this->setKey('File', $file);
     }
@@ -62,7 +62,7 @@ class MixMonitorAction extends ActionMessage
      *
      * @return void
      */
-    public function setOptions(array $options)
+    public function setOptions(array $options): void
     {
         $this->setKey('Options', implode('', $options));
     }
@@ -74,7 +74,7 @@ class MixMonitorAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($channel)
+    public function __construct(string $channel)
     {
         parent::__construct('MixMonitor');
         $this->setKey('Channel', $channel);

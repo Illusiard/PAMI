@@ -3,7 +3,7 @@ PAMI\Message\Event\UnknownEvent
 
 This is an unknown (not implemented yet) event received from ami.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: UnknownEvent

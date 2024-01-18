@@ -2,12 +2,13 @@
 /**
  * BlindTransfer action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * BlindTransfer action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -50,7 +52,7 @@ class BlindTransferAction extends ActionMessage
      * @param string $extension Extension to transfer to.
      * @param string $context Context to transfer to.
      */
-    public function __construct($channel, $extension, $context)
+    public function __construct(string $channel, string $extension, string $context)
     {
         parent::__construct('BlindTransfer');
         $this->setKey('Channel', $channel);

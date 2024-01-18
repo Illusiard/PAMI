@@ -2,12 +2,13 @@
 /**
  * Event triggered for a status change in a queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for a status change in a queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class QueueMemberStatusEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
@@ -68,9 +58,9 @@ class QueueMemberStatusEvent extends EventMessage
     /**
      * Returns key: 'Location'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocation()
+    public function getLocation(): ?string
     {
         return $this->getKey('Location');
     }
@@ -78,9 +68,9 @@ class QueueMemberStatusEvent extends EventMessage
     /**
      * Returns key: 'MemberName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMemberName()
+    public function getMemberName(): ?string
     {
         return $this->getKey('MemberName');
     }
@@ -88,9 +78,9 @@ class QueueMemberStatusEvent extends EventMessage
     /**
      * Returns key: 'Membership'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMembership()
+    public function getMembership(): ?string
     {
         return $this->getKey('Membership');
     }
@@ -98,40 +88,40 @@ class QueueMemberStatusEvent extends EventMessage
     /**
      * Returns key: 'Penalty'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getPenalty()
+    public function getPenalty(): ?int
     {
-        return $this->getKey('Penalty');
+        return (int)$this->getKey('Penalty') ?: null;
     }
 
     /**
      * Returns key: 'CallsTaken'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getCallsTaken()
+    public function getCallsTaken(): ?int
     {
-        return $this->getKey('CallsTaken');
+        return (int)$this->getKey('CallsTaken') ?: null;
     }
 
     /**
      * Returns key: 'Status'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getStatus()
+    public function getStatus(): ?int
     {
-        return $this->getKey('Status');
+        return (int)$this->getKey('Status') ?: null;
     }
 
     /**
      * Returns key: 'Paused'.
      *
-     * @return boolean
+     * @return bool
      */
-    public function getPause()
+    public function getPaused(): bool
     {
-        return intval($this->getKey('Paused')) != 0;
+        return (int)$this->getKey('Paused') !== 0;
     }
 }

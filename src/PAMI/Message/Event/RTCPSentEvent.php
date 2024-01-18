@@ -2,12 +2,13 @@
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class RTCPSentEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'To'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTo()
+    public function getTo(): ?string
     {
         return $this->getKey('To');
     }
@@ -68,9 +58,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'OurSSRC'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOurSSRC()
+    public function getOurSSRC(): ?string
     {
         return $this->getKey('OurSSRC');
     }
@@ -78,9 +68,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'SentNTP'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSentNTP()
+    public function getSentNTP(): ?string
     {
         return $this->getKey('SentNTP');
     }
@@ -88,9 +78,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'SentRTP'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSentRTP()
+    public function getSentRTP(): ?string
     {
         return $this->getKey('SentRTP');
     }
@@ -98,9 +88,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'SentPackets'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSentPackets()
+    public function getSentPackets(): ?string
     {
         return $this->getKey('SentPackets');
     }
@@ -108,9 +98,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'SentOctets'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSentOctets()
+    public function getSentOctets(): ?string
     {
         return $this->getKey('SentOctets');
     }
@@ -118,9 +108,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'ReportBlock'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getReportBlock()
+    public function getReportBlock(): ?string
     {
         return $this->getKey('ReportBlock');
     }
@@ -128,9 +118,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'FractionLost'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFractionLost()
+    public function getFractionLost(): ?string
     {
         return $this->getKey('FractionLost');
     }
@@ -138,9 +128,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'CumulativeLoss'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCumulativeLoss()
+    public function getCumulativeLoss(): ?string
     {
         return $this->getKey('CumulativeLoss');
     }
@@ -148,9 +138,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'IAJitter'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIAJitter()
+    public function getIAJitter(): ?string
     {
         return $this->getKey('IAJitter');
     }
@@ -158,9 +148,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'TheirLastSR'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTheirLastSR()
+    public function getTheirLastSR(): ?string
     {
         return $this->getKey('TheirLastSR');
     }
@@ -168,9 +158,9 @@ class RTCPSentEvent extends EventMessage
     /**
      * Returns key: 'DLSR'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDLSR()
+    public function getDLSR(): ?string
     {
         return $this->getKey('DLSR');
     }

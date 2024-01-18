@@ -3,7 +3,7 @@ PAMI\Message\Event\UserEventEvent
 
 Custom user events.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: UserEventEvent

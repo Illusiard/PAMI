@@ -3,7 +3,7 @@ PAMI\Message\Event\PeerStatusEvent
 
 Event triggered when a peer changes its status.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: PeerStatusEvent

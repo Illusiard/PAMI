@@ -4,7 +4,7 @@ PAMI\Message\Event\ParkedCallsCompleteEvent
 Event triggered for the end of the list when an action ParkedCalls
 is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ParkedCallsCompleteEvent

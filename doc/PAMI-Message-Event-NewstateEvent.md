@@ -3,7 +3,7 @@ PAMI\Message\Event\NewstateEvent
 
 Event triggered when a channel changes its status.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: NewstateEvent

@@ -3,7 +3,7 @@ PAMI\Message\Action\PlayDTMFAction
 
 PlayDTMF action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: PlayDTMFAction

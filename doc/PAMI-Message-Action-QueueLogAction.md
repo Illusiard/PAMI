@@ -3,7 +3,7 @@ PAMI\Message\Action\QueueLogAction
 
 QueueLog action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueLogAction

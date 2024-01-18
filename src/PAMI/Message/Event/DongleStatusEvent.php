@@ -2,12 +2,13 @@
 /**
  * Event triggered starting/stopping a dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered starting/stopping a dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class DongleStatusEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }
@@ -58,20 +58,11 @@ class DongleStatusEvent extends EventMessage
     /**
      * Returns key: 'Device'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDevice()
+    public function getDevice(): ?string
     {
         return $this->getKey('Device');
     }
 
-    /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
 }

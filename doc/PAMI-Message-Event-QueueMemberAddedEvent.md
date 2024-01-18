@@ -3,7 +3,7 @@ PAMI\Message\Event\QueueMemberAddedEvent
 
 Event triggered for a QueueMemberAdd action.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueMemberAddedEvent

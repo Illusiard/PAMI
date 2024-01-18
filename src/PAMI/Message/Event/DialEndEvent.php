@@ -2,12 +2,13 @@
 /**
  * Event triggered when a dial action has completed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,153 +33,24 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a dial action has completed.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class DialEndEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
-    }
-
-    /**
      * Returns key: 'DestChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestChannel()
+    public function getDestChannel(): ?string
     {
         return $this->getKey('DestChannel');
     }
@@ -186,9 +58,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestChannelState()
+    public function getDestChannelState(): ?string
     {
         return $this->getKey('DestChannelState');
     }
@@ -196,9 +68,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestChannelStateDesc()
+    public function getDestChannelStateDesc(): ?string
     {
         return $this->getKey('DestChannelStateDesc');
     }
@@ -206,9 +78,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestCallerIDNum()
+    public function getDestCallerIDNum(): ?string
     {
         return $this->getKey('DestCallerIDNum');
     }
@@ -216,9 +88,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestCallerIDName()
+    public function getDestCallerIDName(): ?string
     {
         return $this->getKey('DestCallerIDName');
     }
@@ -226,9 +98,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestConnectedLineNum()
+    public function getDestConnectedLineNum(): ?string
     {
         return $this->getKey('DestConnectedLineNum');
     }
@@ -236,9 +108,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestConnectedLineName()
+    public function getDestConnectedLineName(): ?string
     {
         return $this->getKey('DestConnectedLineName');
     }
@@ -246,9 +118,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestAccountCode()
+    public function getDestAccountCode(): ?string
     {
         return $this->getKey('DestAccountCode');
     }
@@ -256,9 +128,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestContext()
+    public function getDestContext(): ?string
     {
         return $this->getKey('DestContext');
     }
@@ -266,9 +138,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestExten()
+    public function getDestExten(): ?string
     {
         return $this->getKey('DestExten');
     }
@@ -276,9 +148,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestPriority()
+    public function getDestPriority(): ?string
     {
         return $this->getKey('DestPriority');
     }
@@ -286,9 +158,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DestUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestUniqueid()
+    public function getDestUniqueid(): ?string
     {
         return $this->getKey('DestUniqueid');
     }
@@ -296,9 +168,9 @@ class DialEndEvent extends EventMessage
     /**
      * Returns key: 'DialStatus'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDialStatus()
+    public function getDialStatus(): ?string
     {
         return $this->getKey('DialStatus');
     }

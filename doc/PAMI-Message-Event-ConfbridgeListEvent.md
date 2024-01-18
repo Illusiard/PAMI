@@ -3,7 +3,7 @@ PAMI\Message\Event\ConfbridgeListEvent
 
 Event triggered when an action ConfbridgeList is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ConfbridgeListEvent

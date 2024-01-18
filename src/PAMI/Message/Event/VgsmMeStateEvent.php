@@ -2,12 +2,13 @@
 /**
  * Whenever a ME (GSM module) changes working state, an event is generated.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Whenever a ME (GSM module) changes working state, an event is generated.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class VgsmMeStateEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'X-vGSM-ME-State'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getState()
+    public function getState(): ?string
     {
         return $this->getKey('X-vGSM-ME-State');
     }
@@ -68,9 +58,9 @@ class VgsmMeStateEvent extends EventMessage
     /**
      * Returns key: 'X-vGSM-ME-Old-State'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOldState()
+    public function getOldState(): ?string
     {
         return $this->getKey('X-vGSM-ME-Old-State');
     }
@@ -78,9 +68,9 @@ class VgsmMeStateEvent extends EventMessage
     /**
      * Returns key: 'X-vGSM-ME-State-Change-Reason'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getReason()
+    public function getReason(): ?string
     {
         return $this->getKey('X-vGSM-ME-State-Change-Reason');
     }

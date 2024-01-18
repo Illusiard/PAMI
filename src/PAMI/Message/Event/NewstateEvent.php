@@ -4,12 +4,13 @@
  *
  * NOTE: For correct callerid values: see: https://issues.asterisk.org/jira/browse/ASTERISK-16910
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -31,109 +32,19 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a channel changes its status.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class NewstateEvent extends EventMessage
 {
-    /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'. Asterisk < 1.8.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'. Asterisk < 1.8.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-   /**
-     * Returns key: 'ConnectedLineNum'. Asterisk >= 1.8.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'. Asterisk >= 1.8.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
 }

@@ -3,7 +3,7 @@ PAMI\Message\Event\ListDialPlanEvent
 
 Event triggered when an action ShowDialPlan is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ListDialPlanEvent

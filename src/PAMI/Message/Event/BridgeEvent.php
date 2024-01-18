@@ -2,12 +2,13 @@
 /**
  * Event triggered when bridging (connecting) two channels.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when bridging (connecting) two channels.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class BridgeEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Bridgestate'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeState()
+    public function getBridgeState(): ?string
     {
         return $this->getKey('Bridgestate');
     }
@@ -68,9 +58,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'Bridgetype'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeType()
+    public function getBridgeType(): ?string
     {
         return $this->getKey('Bridgetype');
     }
@@ -78,9 +68,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'Channel1'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannel1()
+    public function getChannel1(): ?string
     {
         return $this->getKey('Channel1');
     }
@@ -88,9 +78,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'Channel2'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannel2()
+    public function getChannel2(): ?string
     {
         return $this->getKey('Channel2');
     }
@@ -98,9 +88,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'CallerID1'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerID1()
+    public function getCallerID1(): ?string
     {
         return $this->getKey('CallerID1');
     }
@@ -108,9 +98,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'CallerID2'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerID2()
+    public function getCallerID2(): ?string
     {
         return $this->getKey('CallerID2');
     }
@@ -118,9 +108,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'UniqueID1'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUniqueID1()
+    public function getUniqueID1(): ?string
     {
         return $this->getKey('UniqueID1');
     }
@@ -128,9 +118,9 @@ class BridgeEvent extends EventMessage
     /**
      * Returns key: 'UniqueID2'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUniqueID2()
+    public function getUniqueID2(): ?string
     {
         return $this->getKey('UniqueID2');
     }

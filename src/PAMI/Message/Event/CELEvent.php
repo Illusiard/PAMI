@@ -2,7 +2,7 @@
 /**
  * Event triggered when a CEL log message is generated
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -29,12 +29,10 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a CEL log message is generated
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -48,31 +46,20 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'AMAFlags'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAMAFlags()
+    public function getAMAFlags(): ?string
     {
         return $this->getKey('AMAFlags');
     }
 
 
     /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-
-    /**
      * Returns key: 'AppData'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAppData()
+    public function getAppData(): ?string
     {
         return $this->getKey('AppData');
     }
@@ -81,9 +68,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'Application'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplication()
+    public function getApplication(): ?string
     {
         return $this->getKey('Application');
     }
@@ -92,9 +79,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'CallerIDani'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDani()
+    public function getCallerIDani(): ?string
     {
         return $this->getKey('CallerIDani');
     }
@@ -103,9 +90,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'CallerIDdnid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDdnid()
+    public function getCallerIDdnid(): ?string
     {
         return $this->getKey('CallerIDdnid');
     }
@@ -114,9 +101,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'CallerIDname'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDname()
+    public function getCallerIDname(): ?string
     {
         return $this->getKey('CallerIDname');
     }
@@ -125,9 +112,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'CallerIDnum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDnum()
+    public function getCallerIDnum(): ?string
     {
         return $this->getKey('CallerIDnum');
     }
@@ -136,42 +123,20 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'CallerIDrdnis'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIDrdnis()
+    public function getCallerIDrdnis(): ?string
     {
         return $this->getKey('CallerIDrdnis');
     }
 
 
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-
-    /**
      * Returns key: 'Event'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEvent()
+    public function getEvent(): ?string
     {
         return $this->getKey('Event');
     }
@@ -180,9 +145,9 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'EventName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEventName()
+    public function getEventName(): ?string
     {
         return $this->getKey('EventName');
     }
@@ -191,53 +156,30 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'EventTime'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEventTime()
+    public function getEventTime(): ?string
     {
         return $this->getKey('EventTime');
     }
 
 
     /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-
-    /**
      * Returns key: 'Extra'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtra()
+    public function getExtra(): ?string
     {
         return $this->getKey('Extra');
     }
 
-
-    /**
-     * Returns key: 'LinkedID'.
-     *
-     * @return string
-     */
-    public function getLinkedID()
-    {
-        return $this->getKey('LinkedID');
-    }
-
-
     /**
      * Returns key: 'Peer'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPeer()
+    public function getPeer(): ?string
     {
         return $this->getKey('Peer');
     }
@@ -246,53 +188,31 @@ class CELEvent extends EventMessage
     /**
      * Returns key: 'PeerAccount'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPeerAccount()
+    public function getPeerAccount(): ?string
     {
         return $this->getKey('PeerAccount');
     }
 
 
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-
-    /**
      * Returns key: 'Timestamp'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTimestamp()
+    public function getTimestamp(): ?string
     {
         return $this->getKey('Timestamp');
     }
 
 
     /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-
-    /**
      * Returns key: 'Userfield'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getUserfield()
+    public function getUserfield(): ?string
     {
         return $this->getKey('Userfield');
     }

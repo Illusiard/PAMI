@@ -1,11 +1,12 @@
 <?php
+
 /**
  * PAMI basic SMS usage.
  * This script will send a message and listen for any incoming message. Multipart message is
  * supported (receiving a multiparte msg will trigger 2 separate msgs instead of concatenate
  * them correctly :P )
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @author   Matías Barletta <mrb@lionix.com>
@@ -28,10 +29,10 @@
  * limitations under the License.
  *
  */
-if ($argc <7 ) {
+if ($argc < 7) {
     echo "Use: $argv[0] <host> <port> <user> <pass> <msg> <phone> [test_multipart <1|0> ] ";
     echo "example: example_sms.php 192.168.1.20 5038 smsuser smspass 'PAMI is great!' +17865394747 1
-" ;
+";
     exit (254);
 }
 
@@ -44,7 +45,7 @@ require(implode(DIRECTORY_SEPARATOR, array(
     '..',
     '..',
     'vendor',
-    'autoload.php'
+    'autoload.php',
 )));
 
 use PAMI\Client\Impl\ClientImpl;
@@ -57,23 +58,18 @@ use PAMI\Message\Action\VGSMSMSTxAction;
 
 class A implements IEventListener
 {
-    public function handle(EventMessage $event)
+    public function handle(EventMessage $event): void
     {
         //This Handler will print the incoming message.
-        echo "Message Received from :". $event->getFrom()." \n";
-        if ($event->getContentEncoding()=='base64'){
-
+        echo "Message Received from :" . $event->getFrom() . " \n";
+        if ($event->getContentEncoding() === 'base64') {
             echo base64_decode($event->getContent());
-            }
-        else{
-            echo 'Unrecognized encoding - printing message in this encoding :  ' ;
+        } else {
+            echo 'Unrecognized encoding - printing message in this encoding :  ';
             $event->getContentEncoding();
-            echo '\n Message:  ' ;
+            echo '\n Message:  ';
             $event->getContent();
-            }
-
-
-
+        }
     }
 }
 
@@ -84,19 +80,17 @@ class A implements IEventListener
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-try
-
-{
+try {
     $options = array(
-        'host' => $argv[1],
-        'port' => $argv[2],
+        'host'     => $argv[1],
+        'port'     => $argv[2],
         'username' => $argv[3],
-        'secret' => $argv[4],
+        'secret'   => $argv[4],
 
         'connect_timeout' => 60,
-        'read_timeout' => 60
+        'read_timeout'    => 60,
     );
-    $a = new ClientImpl($options);
+    $a       = new ClientImpl($options);
     $a->registerEventListener(new A());
     $a->open();
 
@@ -104,12 +98,12 @@ try
     $sms = new VGSMSMSTxAction();
 
     $sms->setContentType('text/plain; charset=ASCII');
-    $msg=$argv[5];
-    $phone=$argv[6];
+    $msg   = $argv[5];
+    $phone = $argv[6];
     $sms->setContent($msg);
     $sms->setTo($phone);
     // SMS multipart MSG - This is used to send 1 big message splitted in several parts, up to 255 messages
-    if($argv[7]==1){
+    if ($argv[7] == 1) {
         $sms->setConcatRefId('58');
         $sms->setConcatTotalMsg('2');
         $sms->setConcatSeqNum('1');
@@ -123,12 +117,11 @@ try
     $a->send($sms);
 
     $time = time();
-    while(true)//(time() - $time) < 60) // Wait for events.
+    while (true)//(time() - $time) < 60) // Wait for events.
     {
         usleep(1000); // 1ms delay
         // Since we declare(ticks=1) at the top, the following line is not necessary
         $a->process();
-
     }
     $a->close(); // send logoff and close the connection.
 } catch (Exception $e) {

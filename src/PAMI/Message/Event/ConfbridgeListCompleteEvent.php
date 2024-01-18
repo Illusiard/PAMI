@@ -2,7 +2,7 @@
 /**
  * Event triggered for the end of the list when an action ConfbridgeList is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -29,12 +29,10 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for the end of the list when an action ConfbridgeList is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -48,9 +46,9 @@ class ConfbridgeListCompleteEvent extends EventMessage
     /**
      * Returns key: 'ListItems'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getListItems()
+    public function getListItems(): ?string
     {
         return $this->getKey('ListItems');
     }

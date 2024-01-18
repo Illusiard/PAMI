@@ -3,7 +3,7 @@ PAMI\Message\Action\ChangeMonitorAction
 
 Changes the monitor filename.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ChangeMonitorAction

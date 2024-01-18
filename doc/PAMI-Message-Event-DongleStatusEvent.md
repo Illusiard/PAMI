@@ -3,7 +3,7 @@ PAMI\Message\Event\DongleStatusEvent
 
 Event triggered starting/stopping a dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleStatusEvent

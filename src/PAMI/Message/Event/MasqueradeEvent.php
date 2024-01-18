@@ -2,12 +2,13 @@
 /**
  * Event triggered when an extension is masqued??
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an extension is masqued??
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class MasqueradeEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Clone'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getClone()
+    public function getClone(): ?string
     {
         return $this->getKey('Clone');
     }
@@ -68,18 +58,18 @@ class MasqueradeEvent extends EventMessage
     /**
      * Returns key: 'CloneState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCloneState()
+    public function getCloneState(): ?string
     {
         return $this->getKey('CloneState');
     }
     /**
      * Returns key: 'Original'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOriginal()
+    public function getOriginal(): ?string
     {
         return $this->getKey('Original');
     }
@@ -87,9 +77,9 @@ class MasqueradeEvent extends EventMessage
     /**
      * Returns key: 'OriginalState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOriginalState()
+    public function getOriginalState(): ?string
     {
         return $this->getKey('OriginalState');
     }

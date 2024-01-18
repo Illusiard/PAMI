@@ -3,7 +3,7 @@ PAMI\Message\Event\OriginateResponseEvent
 
 Response from an async originate.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: OriginateResponseEvent

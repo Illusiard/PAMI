@@ -2,12 +2,13 @@
 /**
  * Event triggered when a call is transfered.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -27,26 +28,28 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
  * Event triggered when an attended transfer is complete.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class AttendedTransferEvent extends EventMessage
 {
-    const RESULT_FAIL = 'Fail';
-    const RESULT_INVALID = 'Invalid';
-    const RESULT_NOT_PERMITTED = 'Not Permitted';
-    const RESULT_SUCCESS = 'Success';
+    public const RESULT_FAIL          = 'Fail';
+    public const RESULT_INVALID       = 'Invalid';
+    public const RESULT_NOT_PERMITTED = 'Not Permitted';
+    public const RESULT_SUCCESS       = 'Success';
 
     /**
      * Returns key: 'Result'.
@@ -57,9 +60,9 @@ class AttendedTransferEvent extends EventMessage
      * - Not Permitted - Bridge does not permit transfers
      * - Success - Transfer completed successfully
      *
-     * @return string
+     * @return ?string
      */
-    public function getResult()
+    public function getResult(): ?string
     {
         return $this->getKey('Result');
     }
@@ -67,9 +70,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererChannel()
+    public function getOrigTransfererChannel(): ?string
     {
         return $this->getKey('OrigTransfererChannel');
     }
@@ -77,9 +80,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererChannelState()
+    public function getOrigTransfererChannelState(): ?string
     {
         return $this->getKey('OrigTransfererChannelState');
     }
@@ -99,9 +102,9 @@ class AttendedTransferEvent extends EventMessage
      * Pre-ring
      * Unknown
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererChannelStateDesc()
+    public function getOrigTransfererChannelStateDesc(): ?string
     {
         return $this->getKey('OrigTransfererChannelStateDesc');
     }
@@ -109,9 +112,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererCallerIDNum()
+    public function getOrigTransfererCallerIDNum(): ?string
     {
         return $this->getKey('OrigTransfererCallerIDNum');
     }
@@ -119,9 +122,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererCallerIDName()
+    public function getOrigTransfererCallerIDName(): ?string
     {
         return $this->getKey('OrigTransfererCallerIDName');
     }
@@ -129,9 +132,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererConnectedLineNum()
+    public function getOrigTransfererConnectedLineNum(): ?string
     {
         return $this->getKey('OrigTransfererConnectedLineNum');
     }
@@ -139,9 +142,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererConnectedLineName()
+    public function getOrigTransfererConnectedLineName(): ?string
     {
         return $this->getKey('OrigTransfererConnectedLineName');
     }
@@ -149,9 +152,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererAccountCode()
+    public function getOrigTransfererAccountCode(): ?string
     {
         return $this->getKey('OrigTransfererAccountCode');
     }
@@ -159,9 +162,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererContext()
+    public function getOrigTransfererContext(): ?string
     {
         return $this->getKey('OrigTransfererContext');
     }
@@ -169,9 +172,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererExten()
+    public function getOrigTransfererExten(): ?string
     {
         return $this->getKey('OrigTransfererExten');
     }
@@ -179,9 +182,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererPriority()
+    public function getOrigTransfererPriority(): ?string
     {
         return $this->getKey('OrigTransfererPriority');
     }
@@ -189,9 +192,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigTransfererUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigTransfererUniqueid()
+    public function getOrigTransfererUniqueid(): ?string
     {
         return $this->getKey('OrigTransfererUniqueid');
     }
@@ -199,9 +202,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeUniqueid()
+    public function getOrigBridgeUniqueid(): ?string
     {
         return $this->getKey('OrigBridgeUniqueid');
     }
@@ -209,9 +212,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeType()
+    public function getOrigBridgeType(): ?string
     {
         return $this->getKey('OrigBridgeType');
     }
@@ -219,9 +222,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeTechnology'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeTechnology()
+    public function getOrigBridgeTechnology(): ?string
     {
         return $this->getKey('OrigBridgeTechnology');
     }
@@ -229,9 +232,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeCreator'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeCreator()
+    public function getOrigBridgeCreator(): ?string
     {
         return $this->getKey('OrigBridgeCreator');
     }
@@ -239,9 +242,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeName()
+    public function getOrigBridgeName(): ?string
     {
         return $this->getKey('OrigBridgeName');
     }
@@ -249,9 +252,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'OrigBridgeNumChannels'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getOrigBridgeNumChannels()
+    public function getOrigBridgeNumChannels(): ?string
     {
         return $this->getKey('OrigBridgeNumChannels');
     }
@@ -259,9 +262,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererChannel()
+    public function getSecondTransfererChannel(): ?string
     {
         return $this->getKey('SecondTransfererChannel');
     }
@@ -269,9 +272,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererChannelState()
+    public function getSecondTransfererChannelState(): ?string
     {
         return $this->getKey('SecondTransfererChannelState');
     }
@@ -291,9 +294,9 @@ class AttendedTransferEvent extends EventMessage
      * Pre-ring
      * Unknown
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererChannelStateDesc()
+    public function getSecondTransfererChannelStateDesc(): ?string
     {
         return $this->getKey('SecondTransfererChannelStateDesc');
     }
@@ -301,9 +304,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererCallerIDNum()
+    public function getSecondTransfererCallerIDNum(): ?string
     {
         return $this->getKey('SecondTransfererCallerIDNum');
     }
@@ -311,9 +314,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererCallerIDName()
+    public function getSecondTransfererCallerIDName(): ?string
     {
         return $this->getKey('SecondTransfererCallerIDName');
     }
@@ -321,9 +324,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererConnectedLineNum()
+    public function getSecondTransfererConnectedLineNum(): ?string
     {
         return $this->getKey('SecondTransfererConnectedLineNum');
     }
@@ -331,9 +334,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererConnectedLineName()
+    public function getSecondTransfererConnectedLineName(): ?string
     {
         return $this->getKey('SecondTransfererConnectedLineName');
     }
@@ -341,9 +344,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererAccountCode()
+    public function getSecondTransfererAccountCode(): ?string
     {
         return $this->getKey('SecondTransfererAccountCode');
     }
@@ -351,9 +354,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererContext()
+    public function getSecondTransfererContext(): ?string
     {
         return $this->getKey('SecondTransfererContext');
     }
@@ -361,9 +364,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererExten()
+    public function getSecondTransfererExten(): ?string
     {
         return $this->getKey('SecondTransfererExten');
     }
@@ -371,9 +374,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererPriority()
+    public function getSecondTransfererPriority(): ?string
     {
         return $this->getKey('SecondTransfererPriority');
     }
@@ -381,9 +384,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondTransfererUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondTransfererUniqueid()
+    public function getSecondTransfererUniqueid(): ?string
     {
         return $this->getKey('SecondTransfererUniqueid');
     }
@@ -391,9 +394,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeUniqueid()
+    public function getSecondBridgeUniqueid(): ?string
     {
         return $this->getKey('SecondBridgeUniqueid');
     }
@@ -401,9 +404,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeType()
+    public function getSecondBridgeType(): ?string
     {
         return $this->getKey('SecondBridgeType');
     }
@@ -411,9 +414,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeTechnology'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeTechnology()
+    public function getSecondBridgeTechnology(): ?string
     {
         return $this->getKey('SecondBridgeTechnology');
     }
@@ -421,9 +424,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeCreator'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeCreator()
+    public function getSecondBridgeCreator(): ?string
     {
         return $this->getKey('SecondBridgeCreator');
     }
@@ -431,9 +434,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeName()
+    public function getSecondBridgeName(): ?string
     {
         return $this->getKey('SecondBridgeName');
     }
@@ -441,9 +444,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'SecondBridgeNumChannels'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSecondBridgeNumChannels()
+    public function getSecondBridgeNumChannels(): ?string
     {
         return $this->getKey('SecondBridgeNumChannels');
     }
@@ -458,9 +461,9 @@ class AttendedTransferEvent extends EventMessage
      * Threeway - The transfer was accomplished by placing all parties into a threeway call.
      * Fail - The transfer failed.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestType()
+    public function getDestType(): ?string
     {
         return $this->getKey('DestType');
     }
@@ -468,9 +471,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'DestBridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestBridgeUniqueid()
+    public function getDestBridgeUniqueid(): ?string
     {
         return $this->getKey('DestBridgeUniqueid');
     }
@@ -478,9 +481,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'DestApp'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestApp()
+    public function getDestApp(): ?string
     {
         return $this->getKey('DestApp');
     }
@@ -488,9 +491,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneChannel()
+    public function getLocalOneChannel(): ?string
     {
         return $this->getKey('LocalOneChannel');
     }
@@ -498,9 +501,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneChannelState()
+    public function getLocalOneChannelState(): ?string
     {
         return $this->getKey('LocalOneChannelState');
     }
@@ -508,9 +511,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneChannelStateDesc()
+    public function getLocalOneChannelStateDesc(): ?string
     {
         return $this->getKey('LocalOneChannelStateDesc');
     }
@@ -518,9 +521,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneCallerIDNum()
+    public function getLocalOneCallerIDNum(): ?string
     {
         return $this->getKey('LocalOneCallerIDNum');
     }
@@ -528,9 +531,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneCallerIDName()
+    public function getLocalOneCallerIDName(): ?string
     {
         return $this->getKey('LocalOneCallerIDName');
     }
@@ -538,9 +541,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneConnectedLineNum()
+    public function getLocalOneConnectedLineNum(): ?string
     {
         return $this->getKey('LocalOneConnectedLineNum');
     }
@@ -548,9 +551,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneConnectedLineName()
+    public function getLocalOneConnectedLineName(): ?string
     {
         return $this->getKey('LocalOneConnectedLineName');
     }
@@ -558,9 +561,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneAccountCode()
+    public function getLocalOneAccountCode(): ?string
     {
         return $this->getKey('LocalOneAccountCode');
     }
@@ -568,9 +571,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneContext()
+    public function getLocalOneContext(): ?string
     {
         return $this->getKey('LocalOneContext');
     }
@@ -578,9 +581,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneExten()
+    public function getLocalOneExten(): ?string
     {
         return $this->getKey('LocalOneExten');
     }
@@ -588,9 +591,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOnePriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOnePriority()
+    public function getLocalOnePriority(): ?string
     {
         return $this->getKey('LocalOnePriority');
     }
@@ -598,9 +601,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalOneUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalOneUniqueid()
+    public function getLocalOneUniqueid(): ?string
     {
         return $this->getKey('LocalOneUniqueid');
     }
@@ -608,9 +611,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoChannel()
+    public function getLocalTwoChannel(): ?string
     {
         return $this->getKey('LocalTwoChannel');
     }
@@ -618,9 +621,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoChannelState()
+    public function getLocalTwoChannelState(): ?string
     {
         return $this->getKey('LocalTwoChannelState');
     }
@@ -628,9 +631,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoChannelStateDesc()
+    public function getLocalTwoChannelStateDesc(): ?string
     {
         return $this->getKey('LocalTwoChannelStateDesc');
     }
@@ -638,9 +641,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoCallerIDNum()
+    public function getLocalTwoCallerIDNum(): ?string
     {
         return $this->getKey('LocalTwoCallerIDNum');
     }
@@ -648,9 +651,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoCallerIDName()
+    public function getLocalTwoCallerIDName(): ?string
     {
         return $this->getKey('LocalTwoCallerIDName');
     }
@@ -658,9 +661,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoConnectedLineNum()
+    public function getLocalTwoConnectedLineNum(): ?string
     {
         return $this->getKey('LocalTwoConnectedLineNum');
     }
@@ -668,9 +671,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoConnectedLineName()
+    public function getLocalTwoConnectedLineName(): ?string
     {
         return $this->getKey('LocalTwoConnectedLineName');
     }
@@ -678,9 +681,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoAccountCode()
+    public function getLocalTwoAccountCode(): ?string
     {
         return $this->getKey('LocalTwoAccountCode');
     }
@@ -688,9 +691,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoContext()
+    public function getLocalTwoContext(): ?string
     {
         return $this->getKey('LocalTwoContext');
     }
@@ -698,9 +701,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoExten()
+    public function getLocalTwoExten(): ?string
     {
         return $this->getKey('LocalTwoExten');
     }
@@ -708,9 +711,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoPriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoPriority()
+    public function getLocalTwoPriority(): ?string
     {
         return $this->getKey('LocalTwoPriority');
     }
@@ -718,9 +721,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'LocalTwoUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLocalTwoUniqueid()
+    public function getLocalTwoUniqueid(): ?string
     {
         return $this->getKey('LocalTwoUniqueid');
     }
@@ -728,9 +731,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'DestTransfererChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDestTransfererChannel()
+    public function getDestTransfererChannel(): ?string
     {
         return $this->getKey('DestTransfererChannel');
     }
@@ -738,9 +741,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannel()
+    public function getTransfereeChannel(): ?string
     {
         return $this->getKey('TransfereeChannel');
     }
@@ -748,9 +751,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeChannelState'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannelState()
+    public function getTransfereeChannelState(): ?string
     {
         return $this->getKey('TransfereeChannelState');
     }
@@ -758,9 +761,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeChannelStateDesc'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeChannelStateDesc()
+    public function getTransfereeChannelStateDesc(): ?string
     {
         return $this->getKey('TransfereeChannelStateDesc');
     }
@@ -768,9 +771,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeCallerIDNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeCallerIDNum()
+    public function getTransfereeCallerIDNum(): ?string
     {
         return $this->getKey('TransfereeCallerIDNum');
     }
@@ -778,9 +781,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeCallerIDName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeCallerIDName()
+    public function getTransfereeCallerIDName(): ?string
     {
         return $this->getKey('TransfereeCallerIDName');
     }
@@ -788,9 +791,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeConnectedLineNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeConnectedLineNum()
+    public function getTransfereeConnectedLineNum(): ?string
     {
         return $this->getKey('TransfereeConnectedLineNum');
     }
@@ -798,9 +801,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeConnectedLineName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeConnectedLineName()
+    public function getTransfereeConnectedLineName(): ?string
     {
         return $this->getKey('TransfereeConnectedLineName');
     }
@@ -808,9 +811,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeAccountCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeAccountCode()
+    public function getTransfereeAccountCode(): ?string
     {
         return $this->getKey('TransfereeAccountCode');
     }
@@ -818,9 +821,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeContext()
+    public function getTransfereeContext(): ?string
     {
         return $this->getKey('TransfereeContext');
     }
@@ -828,9 +831,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeExten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeExten()
+    public function getTransfereeExten(): ?string
     {
         return $this->getKey('TransfereeExten');
     }
@@ -838,9 +841,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereePriority'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereePriority()
+    public function getTransfereePriority(): ?string
     {
         return $this->getKey('TransfereePriority');
     }
@@ -848,9 +851,9 @@ class AttendedTransferEvent extends EventMessage
     /**
      * Returns key: 'TransfereeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTransfereeUniqueid()
+    public function getTransfereeUniqueid(): ?string
     {
         return $this->getKey('TransfereeUniqueid');
     }

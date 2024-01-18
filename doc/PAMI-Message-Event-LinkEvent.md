@@ -3,7 +3,7 @@ PAMI\Message\Event\LinkEvent
 
 Event triggered when linking (connecting) two channels.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: LinkEvent

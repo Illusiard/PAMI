@@ -2,7 +2,7 @@
 /**
  * Returns detailed information about a bridge and the channels in it.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 /**
  * Returns detailed information about a bridge and the channels in it.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -50,7 +50,7 @@ class BridgeInfoAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($bridgeUniqueid)
+    public function __construct(string $bridgeUniqueid)
     {
         parent::__construct('BridgeInfo');
 

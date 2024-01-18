@@ -2,12 +2,13 @@
 /**
  * Event triggered when a caller leaves a Queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,63 +33,24 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a caller leaves a Queue.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class QueueCallerLeaveEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
      * Returns key: 'Count'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCount()
+    public function getCount(): ?string
     {
         return $this->getKey('Count');
     }
@@ -96,9 +58,9 @@ class QueueCallerLeaveEvent extends EventMessage
     /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
@@ -106,29 +68,19 @@ class QueueCallerLeaveEvent extends EventMessage
     /**
      * Returns key: 'Position'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPosition()
+    public function getPosition(): ?string
     {
         return $this->getKey('Position');
     }
 
     /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
      * Returns key: 'CallerIdNum'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIdNum()
+    public function getCallerIdNum(): ?string
     {
         return $this->getKey('CallerIdNum');
     }
@@ -136,70 +88,11 @@ class QueueCallerLeaveEvent extends EventMessage
     /**
      * Returns key: 'CallerIdName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallerIdName()
+    public function getCallerIdName(): ?string
     {
         return $this->getKey('CallerIdName');
     }
 
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
 }

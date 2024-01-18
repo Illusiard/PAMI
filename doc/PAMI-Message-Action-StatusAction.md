@@ -3,7 +3,7 @@ PAMI\Message\Action\StatusAction
 
 Queries for the status of a channel or all channels if none specified.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: StatusAction

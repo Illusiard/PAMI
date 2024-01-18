@@ -2,12 +2,13 @@
 /**
  * Event triggered when issuing a VoicemailUsersList action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when issuing a VoicemailUsersList action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,9 +48,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'NewMessageCount'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getNewMessageCount()
+    public function getNewMessageCount(): ?string
     {
         return $this->getKey('NewMessageCount');
     }
@@ -56,9 +58,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'MaxMessageLength'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMaxMessageLength()
+    public function getMaxMessageLength(): ?string
     {
         return $this->getKey('MaxMessageLength');
     }
@@ -66,9 +68,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'MaxMessageCount'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMaxMessageCount()
+    public function getMaxMessageCount(): ?string
     {
         return $this->getKey('MaxMessageCount');
     }
@@ -76,9 +78,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'CallOperator'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallOperator()
+    public function getCallOperator(): ?string
     {
         return $this->getKey('CallOperator');
     }
@@ -86,9 +88,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'CanReview'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCanReview()
+    public function getCanReview(): ?string
     {
         return $this->getKey('CanReview');
     }
@@ -96,9 +98,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'VolumeGain'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getVolumeGain()
+    public function getVolumeGain(): ?string
     {
         return $this->getKey('VolumeGain');
     }
@@ -106,9 +108,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'DeleteMessage'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDeleteMessage()
+    public function getDeleteMessage(): ?string
     {
         return $this->getKey('DeleteMessage');
     }
@@ -116,9 +118,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'AttachmentFormat'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAttachmentFormat()
+    public function getAttachmentFormat(): ?string
     {
         return $this->getKey('AttachmentFormat');
     }
@@ -126,9 +128,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'AttachMessage'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAttachMessage()
+    public function getAttachMessage(): ?string
     {
         return $this->getKey('AttachMessage');
     }
@@ -136,9 +138,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'SayCID'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSayCID()
+    public function getSayCID(): ?string
     {
         return $this->getKey('SayCID');
     }
@@ -146,9 +148,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'SayEnvelope'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSayEnvelope()
+    public function getSayEnvelope(): ?string
     {
         return $this->getKey('SayEnvelope');
     }
@@ -156,9 +158,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'SayDurationMin'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSayDurationMin()
+    public function getSayDurationMin(): ?string
     {
         return $this->getKey('SayDurationMin');
     }
@@ -166,29 +168,19 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'ExitContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExitContext()
+    public function getExitContext(): ?string
     {
         return $this->getKey('ExitContext');
     }
 
     /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
      * Returns key: 'DialOut'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDialOut()
+    public function getDialOut(): ?string
     {
         return $this->getKey('DialOut');
     }
@@ -196,9 +188,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Callback'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallback()
+    public function getCallback(): ?string
     {
         return $this->getKey('Callback');
     }
@@ -206,9 +198,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Timezone'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTimezone()
+    public function getTimezone(): ?string
     {
         return $this->getKey('Timezone');
     }
@@ -216,9 +208,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Language'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLanguage()
+    public function getLanguage(): ?string
     {
         return $this->getKey('Language');
     }
@@ -226,9 +218,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'MailCommand'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMailCommand()
+    public function getMailCommand(): ?string
     {
         return $this->getKey('MailCommand');
     }
@@ -236,9 +228,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'ServerEmail'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getServerEmail()
+    public function getServerEmail(): ?string
     {
         return $this->getKey('ServerEmail');
     }
@@ -246,9 +238,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Pager'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPager()
+    public function getPager(): ?string
     {
         return $this->getKey('Pager');
     }
@@ -256,9 +248,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Email'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->getKey('Email');
     }
@@ -266,9 +258,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'Fullname'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFullname()
+    public function getFullname(): ?string
     {
         return $this->getKey('Fullname');
     }
@@ -276,9 +268,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'VoicemailBox'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getVoicemailBox()
+    public function getVoicemailBox(): ?string
     {
         return $this->getKey('VoicemailBox');
     }
@@ -286,9 +278,9 @@ class VoicemailUserEntryEvent extends EventMessage
     /**
      * Returns key: 'VmContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getVoicemailContext()
+    public function getVoicemailContext(): ?string
     {
         return $this->getKey('VmContext');
     }

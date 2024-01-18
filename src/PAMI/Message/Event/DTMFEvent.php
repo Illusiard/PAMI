@@ -2,12 +2,13 @@
 /**
  * Event triggered when a dtmf is detected in a call.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,48 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a dtmf is detected in a call.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class DTMFEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'Digit'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDigit()
+    public function getDigit(): ?string
     {
         return $this->getKey('Digit');
     }
@@ -78,9 +58,9 @@ class DTMFEvent extends EventMessage
     /**
      * Returns key: 'Direction'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDirection()
+    public function getDirection(): ?string
     {
         return $this->getKey('Direction');
     }
@@ -88,9 +68,9 @@ class DTMFEvent extends EventMessage
     /**
      * Returns key: 'End'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEnd()
+    public function getEnd(): ?string
     {
         return $this->getKey('End');
     }
@@ -98,20 +78,11 @@ class DTMFEvent extends EventMessage
     /**
      * Returns key: 'Begin'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBegin()
+    public function getBegin(): ?string
     {
         return $this->getKey('Begin');
     }
 
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
 }

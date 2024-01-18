@@ -3,7 +3,7 @@ PAMI\Message\Event\BridgeInfoChannelEvent
 
 Event triggered when an action BridgeInfo is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: BridgeInfoChannelEvent

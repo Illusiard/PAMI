@@ -2,12 +2,13 @@
 /**
  * Event triggered when an action ShowDialPlan is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,58 +30,37 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an action ShowDialPlan is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ListDialPlanEvent extends EventMessage
+class ListDialplanEvent extends EventMessage
 {
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
     /**
      * Returns key: 'Extension'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getKey('Extension');
     }
 
     /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
      * Returns key: 'Application'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplication()
+    public function getApplication(): ?string
     {
         return $this->getKey('Application');
     }
@@ -88,9 +68,9 @@ class ListDialPlanEvent extends EventMessage
     /**
      * Returns key: 'AppData'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplicationData()
+    public function getApplicationData(): ?string
     {
         return $this->getKey('AppData');
     }
@@ -98,9 +78,9 @@ class ListDialPlanEvent extends EventMessage
     /**
      * Returns key: 'Registrar'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRegistrar()
+    public function getRegistrar(): ?string
     {
         return $this->getKey('Registrar');
     }
@@ -108,9 +88,9 @@ class ListDialPlanEvent extends EventMessage
     /**
      * Returns key: 'IncludeContext'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIncludeContext()
+    public function getIncludeContext(): ?string
     {
         return $this->getKey('IncludeContext');
     }

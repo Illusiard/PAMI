@@ -3,7 +3,7 @@ PAMI\Client\Impl\ClientImpl
 
 TCP Client implementation for AMI.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ClientImpl

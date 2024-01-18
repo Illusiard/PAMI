@@ -2,12 +2,13 @@
 /**
  * QueuePenalty action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * QueuePenalty action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,17 +48,18 @@ class QueuePenaltyAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $queue Queue name.
-     * @param string $event Event.
+     * @param string $interface Queue name.
+     * @param string $penalty Event.
+     * @param ?string $queue
      *
      * @return void
      */
-    public function __construct($interface, $penalty, $queue = false)
+    public function __construct(string $interface, string $penalty, ?string $queue = null)
     {
         parent::__construct('QueuePenalty');
         $this->setKey('Interface', $interface);
         $this->setKey('Penalty', $penalty);
-        if ($queue !== false) {
+        if ($queue) {
             $this->setKey('Queue', $queue);
         }
     }

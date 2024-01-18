@@ -2,12 +2,13 @@
 /**
  * Triggered when an extension changes its status.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,58 +30,37 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Triggered when an extension changes its status.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class ExtensionStatusEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Exten'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getKey('Exten');
     }
 
     /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
      * Returns key: 'Hint'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getHint()
+    public function getHint(): ?string
     {
         return $this->getKey('Hint');
     }
@@ -88,9 +68,9 @@ class ExtensionStatusEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }

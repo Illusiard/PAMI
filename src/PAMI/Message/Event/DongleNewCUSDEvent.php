@@ -1,13 +1,14 @@
 <?php
 /**
- * Event triggered when a ussd was queued for sent by dongle.
+ * Event triggered when an ussd was queued for sent by dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
-* Event triggered when a ussd was queued for sent by dongle.
+* Event triggered when an ussd was queued for sent by dongle.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,29 +48,19 @@ class DongleNewCUSDEvent extends EventMessage
     /**
      * Returns key: 'Device'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDevice()
+    public function getDevice(): ?string
     {
         return $this->getKey('Device');
     }
 
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Message'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->getKey('Message');
     }

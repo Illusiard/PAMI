@@ -3,7 +3,7 @@ PAMI\Message\Event\EventMessage
 
 This is a generic event received from ami.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: EventMessage

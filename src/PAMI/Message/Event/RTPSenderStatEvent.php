@@ -2,12 +2,13 @@
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class RTPSenderStatEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'SSRC'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSSRC()
+    public function getSSRC(): ?string
     {
         return $this->getKey('SSRC');
     }
@@ -68,9 +58,9 @@ class RTPSenderStatEvent extends EventMessage
     /**
      * Returns key: 'SentPackets'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSentPackets()
+    public function getSentPackets(): ?string
     {
         return $this->getKey('SentPackets');
     }
@@ -78,9 +68,9 @@ class RTPSenderStatEvent extends EventMessage
     /**
      * Returns key: 'LostPackets'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLostPackets()
+    public function getLostPackets(): ?string
     {
         return $this->getKey('LostPackets');
     }
@@ -88,9 +78,9 @@ class RTPSenderStatEvent extends EventMessage
     /**
      * Returns key: 'Jitter'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getJitter()
+    public function getJitter(): ?string
     {
         return $this->getKey('Jitter');
     }
@@ -98,9 +88,9 @@ class RTPSenderStatEvent extends EventMessage
     /**
      * Returns key: 'RTT'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRTT()
+    public function getRTT(): ?string
     {
         return $this->getKey('RTT');
     }
@@ -108,9 +98,9 @@ class RTPSenderStatEvent extends EventMessage
     /**
      * Returns key: 'SRCount'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSRCount()
+    public function getSRCount(): ?string
     {
         return $this->getKey('SRCount');
     }

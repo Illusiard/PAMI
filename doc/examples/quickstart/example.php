@@ -3,7 +3,7 @@
 /**
  * PAMI basic use example.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @author   Marcelo Gornstein <marcelog@gmail.com>
@@ -130,7 +130,7 @@ use PAMI\Message\Action\DongleSendPDUAction;
 
 class A implements IEventListener
 {
-    public function handle(EventMessage $event)
+    public function handle(EventMessage $event): void
     {
         var_dump($event);
     }

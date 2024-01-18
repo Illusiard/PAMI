@@ -3,7 +3,7 @@ PAMI\Client\IClient
 
 Interface for an ami client.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Interface name: IClient

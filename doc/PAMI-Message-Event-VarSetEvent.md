@@ -3,7 +3,7 @@ PAMI\Message\Event\VarSetEvent
 
 Event triggered when a variable is set via agi or dialplan.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VarSetEvent

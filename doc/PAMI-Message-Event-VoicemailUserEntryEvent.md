@@ -3,7 +3,7 @@ PAMI\Message\Event\VoicemailUserEntryEvent
 
 Event triggered when issuing a VoicemailUsersList action.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VoicemailUserEntryEvent

@@ -2,7 +2,7 @@
 /**
  * Event triggered when an action ConfbridgeList is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when an action ConfbridgeList is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -41,54 +41,14 @@ namespace PAMI\Message\Event;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ConfbridgeListEvent extends EventMessage
+class ConfbridgeListEvent extends BaseConfbridgeEvent
 {
-    /**
-     * Returns key: 'Conference'.
-     *
-     * @return string
-     */
-    public function getConference()
-    {
-        return $this->getKey('Conference');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
     /**
      * Returns key: 'MarkedUser'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMarkedUser()
+    public function getMarkedUser(): ?string
     {
         return $this->getKey('MarkedUser');
     }
@@ -96,9 +56,9 @@ class ConfbridgeListEvent extends EventMessage
     /**
      * Returns key: 'WaitMarked'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getWaitMarked()
+    public function getWaitMarked(): ?string
     {
         return $this->getKey('WaitMarked');
     }
@@ -106,9 +66,9 @@ class ConfbridgeListEvent extends EventMessage
     /**
      * Returns key: 'EndMarked'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getEndMarked()
+    public function getEndMarked(): ?string
     {
         return $this->getKey('EndMarked');
     }
@@ -116,9 +76,9 @@ class ConfbridgeListEvent extends EventMessage
     /**
      * Returns key: 'Waiting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getWaiting()
+    public function getWaiting(): ?string
     {
         return $this->getKey('Waiting');
     }
@@ -126,9 +86,9 @@ class ConfbridgeListEvent extends EventMessage
     /**
      * Returns key: 'Muted'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMuted()
+    public function getMuted(): ?string
     {
         return $this->getKey('Muted');
     }
@@ -136,20 +96,11 @@ class ConfbridgeListEvent extends EventMessage
     /**
      * Returns key: 'AnsweredTime'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAnsweredTime()
+    public function getAnsweredTime(): ?string
     {
         return $this->getKey('AnsweredTime');
     }
 
-    /**
-     * Returns key: 'Admin'.
-     *
-     * @return string
-     */
-    public function getAdmin()
-    {
-        return $this->getKey('Admin');
-    }
 }

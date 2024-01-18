@@ -2,12 +2,13 @@
 /**
  * Registry event.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Registry event.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class RegistryEvent extends EventMessage
 {
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'Domain'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDomain()
+    public function getDomain(): ?string
     {
         return $this->getKey('Domain');
     }
@@ -68,9 +58,9 @@ class RegistryEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }

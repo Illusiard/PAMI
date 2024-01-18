@@ -4,7 +4,7 @@ PAMI\Message\Event\Factory\Impl\EventFactoryImpl
 This factory knows which event to return according to a given raw message
 from ami.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: EventFactoryImpl

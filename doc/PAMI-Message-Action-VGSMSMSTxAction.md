@@ -4,7 +4,7 @@ PAMI\Message\Action\VGSMSMSTxAction
 Not all methods were implemented. For reference please check
 http://open.voismart.it/index.php/VGSM_Manager_Interface
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VGSMSMSTxAction

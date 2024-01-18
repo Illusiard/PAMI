@@ -3,7 +3,7 @@ PAMI\Message\Event\DialEvent
 
 Event triggered when a dial is executed.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DialEvent

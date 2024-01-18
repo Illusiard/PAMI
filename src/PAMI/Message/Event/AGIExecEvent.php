@@ -2,12 +2,13 @@
 /**
  * Event triggered when an agi executes an application.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,58 +30,37 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an agi executes an application.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class AGIExecEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'SubEvent'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSubEvent()
+    public function getSubEvent(): ?string
     {
         return $this->getKey('SubEvent');
     }
 
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'CommandId'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCommandId()
+    public function getCommandId(): ?string
     {
         return $this->getKey('CommandId');
     }
@@ -88,9 +68,9 @@ class AGIExecEvent extends EventMessage
     /**
      * Returns key: 'Command'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCommand()
+    public function getCommand(): ?string
     {
         return $this->getKey('Command');
     }
@@ -98,9 +78,9 @@ class AGIExecEvent extends EventMessage
     /**
      * Returns key: 'Result'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getResult()
+    public function getResult(): ?string
     {
         return $this->getKey('Result');
     }
@@ -108,9 +88,9 @@ class AGIExecEvent extends EventMessage
     /**
      * Returns key: 'ResultCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getResultCode()
+    public function getResultCode(): ?string
     {
         return $this->getKey('ResultCode');
     }

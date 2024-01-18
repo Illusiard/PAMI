@@ -3,7 +3,7 @@ PAMI\Client\Exception\ClientException
 
 Connection/Protocol exception.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ClientException

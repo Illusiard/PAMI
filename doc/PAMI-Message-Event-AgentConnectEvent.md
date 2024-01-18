@@ -3,7 +3,7 @@ PAMI\Message\Event\AgentConnectEvent
 
 Event triggered when an agent connects.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AgentConnectEvent

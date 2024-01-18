@@ -3,7 +3,7 @@ PAMI\Message\Action\PauseMonitorAction
 
 Pauses the Monitor for a given channel.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: PauseMonitorAction

@@ -2,12 +2,13 @@
 /**
  * QueueStatus action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * QueueStatus action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,17 +48,18 @@ class QueueStatusAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $queue The queue (optional).
+     * @param ?string $queue  The queue (optional).
+     * @param ?string $member The member (optional).
      *
      * @return void
      */
-    public function __construct($queue = false, $member = false)
+    public function __construct(?string $queue = null, ?string $member = null)
     {
         parent::__construct('QueueStatus');
-        if ($queue != false) {
+        if ($queue) {
             $this->setKey('Queue', $queue);
         }
-        if ($member != false) {
+        if ($member) {
             $this->setKey('Member', $member);
         }
     }

@@ -2,12 +2,13 @@
 /**
  * Event triggered for a QueueSummary action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for a QueueSummary action.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class QueueSummaryEvent extends EventMessage
     /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
@@ -58,9 +58,9 @@ class QueueSummaryEvent extends EventMessage
     /**
      * Returns key: 'LoggedIn'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLoggedIn()
+    public function getLoggedIn(): ?string
     {
         return $this->getKey('LoggedIn');
     }
@@ -68,9 +68,9 @@ class QueueSummaryEvent extends EventMessage
     /**
      * Returns key: 'Available'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAvailable()
+    public function getAvailable(): ?string
     {
         return $this->getKey('Available');
     }
@@ -78,9 +78,9 @@ class QueueSummaryEvent extends EventMessage
     /**
      * Returns key: 'Callers'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getCallers()
+    public function getCallers(): ?string
     {
         return $this->getKey('Callers');
     }
@@ -88,20 +88,20 @@ class QueueSummaryEvent extends EventMessage
     /**
      * Returns key: 'HoldTime'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getHoldTime()
+    public function getHoldTime(): ?int
     {
-        return $this->getKey('HoldTime');
+        return (int)$this->getKey('HoldTime') ?: null;
     }
 
     /**
      * Returns key: 'LongestHoldTime'.
      *
-     * @return integer
+     * @return ?int
      */
-    public function getLongestHoldTime()
+    public function getLongestHoldTime(): ?int
     {
-        return $this->getKey('LongestHoldTime');
+        return (int)$this->getKey('LongestHoldTime') ?: null;
     }
 }

@@ -3,7 +3,7 @@ PAMI\Message\Response\ResponseMessage
 
 A generic response message from ami.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ResponseMessage

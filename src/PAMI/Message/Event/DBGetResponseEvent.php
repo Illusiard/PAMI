@@ -2,12 +2,13 @@
 /**
  * Event triggered when a database key is asked for.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when a database key is asked for.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class DBGetResponseEvent extends EventMessage
     /**
      * Returns key: 'Family'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFamily()
+    public function getFamily(): ?string
     {
         return $this->getKey('Family');
     }
@@ -58,9 +58,9 @@ class DBGetResponseEvent extends EventMessage
     /**
      * Returns key: 'Key'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getKeyName()
+    public function getKeyName(): ?string
     {
         return $this->getKey('Key');
     }
@@ -68,9 +68,9 @@ class DBGetResponseEvent extends EventMessage
     /**
      * Returns key: 'Val'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getValue()
+    public function getValue(): ?string
     {
         return $this->getKey('Val');
     }

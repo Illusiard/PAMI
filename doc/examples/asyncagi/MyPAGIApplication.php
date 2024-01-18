@@ -16,12 +16,13 @@
  * stdout => Optional. Same as stdin but for the output of the client.
  *
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pagi
  * @package    examples
  * @subpackage quickstart
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://www.noneyet.ar/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://www.noneyet.ar/
@@ -62,19 +63,20 @@ declare(ticks=1);
  *
  * stdout => Optional. Same as stdin but for the output of the client.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pagi
  * @package    examples
  * @subpackage quickstart
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://www.noneyet.ar/ Apache License 2.0
  * @link       http://www.noneyet.ar/
  */
 class MyPAGIApplication extends PAGIApplication
 {
     /**
-     * (non-PHPdoc)
+     * (non-PHPDoc)
      * @see PAGI\Application.PAGIApplication::init()
      */
     public function init()
@@ -100,7 +102,7 @@ class MyPAGIApplication extends PAGIApplication
     }
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPDoc)
      * @see PAGI\Application.PAGIApplication::shutdown()
      */
     public function shutdown()
@@ -116,7 +118,7 @@ class MyPAGIApplication extends PAGIApplication
     }
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPDoc)
      * @see PAGI\Application.PAGIApplication::run()
      */
     public function run()
@@ -285,7 +287,7 @@ class MyPAGIApplication extends PAGIApplication
     }
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPDoc)
      * @see PAGI\Application.PAGIApplication::errorHandler()
      */
     public function errorHandler($type, $message, $file, $line)
@@ -297,7 +299,7 @@ class MyPAGIApplication extends PAGIApplication
     }
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPDoc)
      * @see PAGI\Application.PAGIApplication::signalHandler()
      */
     public function signalHandler($signal)

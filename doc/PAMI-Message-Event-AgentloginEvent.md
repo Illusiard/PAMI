@@ -3,7 +3,7 @@ PAMI\Message\Event\AgentloginEvent
 
 Event triggered when an agent logs in.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: AgentloginEvent

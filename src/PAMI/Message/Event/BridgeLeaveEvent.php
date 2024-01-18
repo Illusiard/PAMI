@@ -2,12 +2,13 @@
 /**
  * Event triggered when a channel leaves a bridge.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,33 +33,24 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a channel leaves a bridge.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class BridgeLeaveEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'BridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): ?string
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -66,9 +58,9 @@ class BridgeLeaveEvent extends EventMessage
     /**
      * Returns key: 'BridgeType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeType()
+    public function getBridgeType(): ?string
     {
         return $this->getKey('BridgeType');
     }
@@ -76,9 +68,9 @@ class BridgeLeaveEvent extends EventMessage
     /**
      * Returns key: 'BridgeTechnology'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): ?string
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -86,9 +78,9 @@ class BridgeLeaveEvent extends EventMessage
     /**
      * Returns key: 'BridgeCreator'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): ?string
     {
         return $this->getKey('BridgeCreator');
     }
@@ -96,9 +88,9 @@ class BridgeLeaveEvent extends EventMessage
     /**
      * Returns key: 'BridgeName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeName()
+    public function getBridgeName(): ?string
     {
         return $this->getKey('BridgeName');
     }
@@ -106,130 +98,11 @@ class BridgeLeaveEvent extends EventMessage
     /**
      * Returns key: 'BridgeNumChannels'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): ?string
     {
         return $this->getKey('BridgeNumChannels');
     }
 
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
-    }
 }

@@ -5,7 +5,7 @@ Whenever the registration status of a GSM module changes, a
 vgsm_net_state event is generated. This event is available starting
 from 0.21.0.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VgsmNetStateEvent

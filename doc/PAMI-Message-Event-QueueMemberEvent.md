@@ -3,7 +3,7 @@ PAMI\Message\Event\QueueMemberEvent
 
 Event triggered for a QueueStatus action.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueMemberEvent

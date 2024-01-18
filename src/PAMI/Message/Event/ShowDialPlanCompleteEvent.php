@@ -2,12 +2,13 @@
 /**
  * Event triggered for the end of the list when an action ShowDialPlan is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for the end of the list when an action ShowDialPlan is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class ShowDialPlanCompleteEvent extends EventMessage
     /**
      * Returns key: 'Privilege'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPrivilege()
+    public function getPrivilege(): ?string
     {
         return $this->getKey('privilege');
     }
@@ -58,9 +58,9 @@ class ShowDialPlanCompleteEvent extends EventMessage
     /**
      * Returns key: 'ListItems'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getListItems()
+    public function getListItems(): ?string
     {
         return $this->getKey('listitems');
     }
@@ -68,9 +68,9 @@ class ShowDialPlanCompleteEvent extends EventMessage
     /**
      * Returns key: 'ListExtensions'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getListExtensions()
+    public function getListExtensions(): ?string
     {
         return $this->getKey('listextensions');
     }
@@ -78,9 +78,9 @@ class ShowDialPlanCompleteEvent extends EventMessage
     /**
      * Returns key: 'ListPriorities'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getListPriorities()
+    public function getListPriorities(): ?string
     {
         return $this->getKey('listpriorities');
     }
@@ -88,9 +88,9 @@ class ShowDialPlanCompleteEvent extends EventMessage
     /**
      * Returns key: 'ListContexts'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getListContexts()
+    public function getListContexts(): ?string
     {
         return $this->getKey('listcontexts');
     }

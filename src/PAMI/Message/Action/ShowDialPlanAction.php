@@ -2,12 +2,13 @@
 /**
  * ShowDialPlan action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * ShowDialPlan action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,18 +48,18 @@ class ShowDialPlanAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $context   Show a specific context (optional)
-     * @param string $extension Show a specific extension (optional)
+     * @param ?string $context   Show a specific context (optional)
+     * @param ?string $extension Show a specific extension (optional)
      *
      * @return void
      */
-    public function __construct($context = false, $extension = false)
+    public function __construct(?string $context = null, ?string $extension = null)
     {
         parent::__construct('ShowDialPlan');
-        if ($context != false) {
+        if ($context) {
             $this->setKey('Context', $context);
         }
-        if ($extension != false) {
+        if ($extension) {
             $this->setKey('Extension', $extension);
         }
     }

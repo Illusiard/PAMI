@@ -3,7 +3,7 @@ PAMI\Message\Event\NewextenEvent
 
 Event triggered when a new extension is accessed.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: NewextenEvent

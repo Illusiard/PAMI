@@ -3,7 +3,7 @@ PAMI\Message\Action\DongleSendSMSAction
 
 Send a SMS through Dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleSendSMSAction

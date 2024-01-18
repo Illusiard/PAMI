@@ -2,12 +2,13 @@
 /**
  * Show all dongle devices.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,23 +33,20 @@ namespace PAMI\Message\Action;
 /**
  * Show all dongle devices.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class DongleShowDevicesAction extends ActionMessage
 {
     /**
-     * Constructor.
-     *
-     * @param string $device  Device name (like dongle01).
-     * @param string $number  Destination number.
-     * @param string $message What to send.
+     * not found like an action in documentation
      *
      * @return void
      */

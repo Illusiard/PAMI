@@ -3,7 +3,7 @@ PAMI\Message\Action\DongleSendUSSDAction
 
 Send a USSD through dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleSendUSSDAction

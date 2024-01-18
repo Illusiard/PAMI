@@ -2,12 +2,13 @@
 /**
  * Event triggered when the Do Not Disturb state is changed on a DAHDI channel.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,34 +33,25 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when the Do Not Disturb state is changed on a DAHDI channel.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class DNDStateEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Channel'.
      * @deprecated Please use {@see getDAHDIChannel()}.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannel()
+    public function getChannel(): ?string
     {
         return $this->getDAHDIChannel();
     }
@@ -67,9 +59,9 @@ class DNDStateEvent extends EventMessage
     /**
      * Returns key: 'DAHDIChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDAHDIChannel()
+    public function getDAHDIChannel(): ?string
     {
         return $this->getKey('DAHDIChannel') ?: $this->getKey('Channel');
     }
@@ -77,9 +69,9 @@ class DNDStateEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }

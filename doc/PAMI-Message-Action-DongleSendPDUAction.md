@@ -3,7 +3,7 @@ PAMI\Message\Action\DongleSendPDUAction
 
 Send a PDU through dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleSendPDUAction

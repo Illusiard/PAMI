@@ -3,7 +3,7 @@ PAMI\Message\Action\DAHDIHangupAction
 
 DAHDIHangup action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DAHDIHangupAction

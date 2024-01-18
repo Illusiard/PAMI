@@ -1,13 +1,14 @@
 <?php
 /**
- * Event triggered when ..?
+ * Event triggered when ... ?
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when ..?
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class MessageWaitingEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'Mailbox'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMailbox()
+    public function getMailbox(): ?string
     {
         return $this->getKey('Mailbox');
     }
@@ -68,9 +58,9 @@ class MessageWaitingEvent extends EventMessage
     /**
      * Returns key: 'Waiting'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getWaiting()
+    public function getWaiting(): ?string
     {
         return $this->getKey('Waiting');
     }

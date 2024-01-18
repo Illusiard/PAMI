@@ -3,7 +3,7 @@ PAMI\Message\Event\MasqueradeEvent
 
 Event triggered when an extension is masqued??
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: MasqueradeEvent

@@ -2,12 +2,13 @@
 /**
  * Event triggered when an action Status is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an action Status is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,99 +48,29 @@ class StatusEvent extends EventMessage
     /**
      * Returns key: 'BridgedUniqueID'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgedUniqueID()
+    public function getBridgedUniqueID(): ?string
     {
         return $this->getKey('BridgedUniqueID');
     }
 
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
      * Returns key: 'Extension'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
         return $this->getKey('Extension');
     }
 
     /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
      * Returns key: 'Application'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplication()
+    public function getApplication(): ?string
     {
         return $this->getKey('Application');
     }
@@ -148,49 +78,29 @@ class StatusEvent extends EventMessage
     /**
      * Returns key: 'ApplicationData'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getApplicationData()
+    public function getApplicationData(): ?string
     {
         return $this->getKey('ApplicationData');
     }
 
     /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
      * Returns key: 'Duration'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDuration()
+    public function getDuration(): ?string
     {
         return $this->getKey('Duration');
     }
 
     /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
      * Returns key: 'Seconds'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSeconds()
+    public function getSeconds(): ?string
     {
         return $this->getKey('Seconds');
     }
@@ -198,9 +108,9 @@ class StatusEvent extends EventMessage
     /**
      * Returns key: 'BridgedChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgedChannel()
+    public function getBridgedChannel(): ?string
     {
         return $this->getKey('BridgedChannel');
     }

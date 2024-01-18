@@ -2,12 +2,13 @@
 /**
  * QueueAdd action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * QueueAdd action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -50,7 +52,7 @@ class QueueAddAction extends ActionMessage
      *
      * @return void
      */
-    public function setStateInterface($stateInterface)
+    public function setStateInterface(string $stateInterface): void
     {
         $this->setKey('StateInterface', $stateInterface);
     }
@@ -58,11 +60,11 @@ class QueueAddAction extends ActionMessage
     /**
      * Sets penalty. Key: 'Penalty'.
      *
-     * @param string $penalty Penalty .. ?
+     * @param string $penalty Penalty ... ?
      *
      * @return void
      */
-    public function setPenalty($penalty)
+    public function setPenalty(string $penalty): void
     {
         $this->setKey('Penalty', $penalty);
     }
@@ -74,7 +76,7 @@ class QueueAddAction extends ActionMessage
      *
      * @return void
      */
-    public function setMemberName($memberName)
+    public function setMemberName(string $memberName): void
     {
         $this->setKey('MemberName', $memberName);
     }
@@ -87,7 +89,7 @@ class QueueAddAction extends ActionMessage
      *
      * @return void
      */
-    public function setPaused($paused)
+    public function setPaused(string $paused): void
     {
         $this->setKey('Paused', $paused);
     }
@@ -100,7 +102,7 @@ class QueueAddAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($queue, $interface)
+    public function __construct(string $queue, string $interface)
     {
         parent::__construct('QueueAdd');
         $this->setKey('Interface', $interface);

@@ -3,7 +3,7 @@ PAMI\Message\Event\VgsmMeStateEvent
 
 Whenever a ME (GSM module) changes working state, an event is generated.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VgsmMeStateEvent

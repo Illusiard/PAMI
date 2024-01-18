@@ -2,7 +2,7 @@
 /**
  * A generic incoming message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Message
@@ -31,7 +31,7 @@ namespace PAMI\Message;
 /**
  * A generic incoming message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Message
@@ -45,20 +45,20 @@ abstract class IncomingMessage extends Message
      * Holds original message.
      * @var string
      */
-    protected $rawContent;
+    protected string $rawContent;
 
     /**
      * Metadata. Specific channel variables.
      * @var string[]
      */
-    protected $channelVariables;
+    protected array $channelVariables = [];
 
     /**
      * Serialize function.
      *
      * @return string[]
      */
-    public function __sleep()
+    public function __sleep(): array
     {
         $ret = parent::__sleep();
         $ret[] = 'rawContent';
@@ -66,12 +66,12 @@ abstract class IncomingMessage extends Message
     }
 
     /**
-     * Returns key 'EventList'. In respones, this will surely be a "start". In
+     * Returns key 'EventList'. In responses, this will surely be a "start". In
      * events, should be a "complete".
      *
-     * @return string
+     * @return ?string
      */
-    public function getEventList()
+    public function getEventList(): ?string
     {
         return $this->getKey('EventList');
     }
@@ -81,7 +81,7 @@ abstract class IncomingMessage extends Message
      *
      * @return string
      */
-    public function getRawContent()
+    public function getRawContent(): string
     {
         return $this->rawContent;
     }
@@ -94,7 +94,7 @@ abstract class IncomingMessage extends Message
      *
      * @return array
      */
-    public function getAllChannelVariables()
+    public function getAllChannelVariables(): array
     {
         return $this->channelVariables;
     }
@@ -103,26 +103,20 @@ abstract class IncomingMessage extends Message
      * Returns the channel variables for the given channel.
      * https://github.com/marcelog/PAMI/issues/85
      *
-     * @param string $channel Channel name. If not given, will return variables
+     * @param ?string $channel Channel name. If not given, will return variables
      * for the "current" channel.
      *
      * @return array
      */
-    public function getChannelVariables($channel = null)
+    public function getChannelVariables(?string $channel = null)
     {
         if (is_null($channel)) {
-            if (!isset($this->keys['channel'])) {
-                return $this->getChannelVariables('default');
-            } else {
-                return $this->getChannelVariables($this->keys['channel']);
-            }
-        } else {
-            $channel = strtolower($channel);
-            if (!isset($this->channelVariables[$channel])) {
-                return null;
-            }
-            return $this->channelVariables[$channel];
+            return $this->getChannelVariables($this->keys['channel'] ?? 'default');
         }
+
+        $channel = strtolower($channel);
+
+        return $this->channelVariables[$channel] ?? null;
     }
 
     /**
@@ -132,10 +126,10 @@ abstract class IncomingMessage extends Message
      *
      * @return void
      */
-    public function __construct($rawContent)
+    public function __construct(string $rawContent)
     {
         parent::__construct();
-        $this->channelVariables = array('default' => array());
+        $this->channelVariables = ['default' => []];
         $this->rawContent = $rawContent;
         $lines = explode(Message::EOL, $rawContent);
         foreach ($lines as $line) {

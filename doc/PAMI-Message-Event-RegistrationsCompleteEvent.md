@@ -4,7 +4,7 @@ PAMI\Message\Event\RegistrationsCompleteEvent
 Event triggered for the end of the list when an action Sipshowregistry
 is issued.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: RegistrationsCompleteEvent

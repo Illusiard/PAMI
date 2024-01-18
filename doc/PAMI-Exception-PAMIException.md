@@ -3,7 +3,7 @@ PAMI\Exception\PAMIException
 
 PAMI family of exceptions.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: PAMIException

@@ -2,12 +2,13 @@
 /**
  * UserEvent action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * UserEvent action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -49,7 +51,7 @@ class UserEventAction extends ActionMessage
      * @param string $userEvent UserEvent
      * @param array $headers
      */
-    public function __construct($userEvent, array $headers = [])
+    public function __construct(string $userEvent, array $headers = [])
     {
         parent::__construct('UserEvent');
         $this->setKey('UserEvent', $userEvent);

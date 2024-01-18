@@ -3,7 +3,7 @@ PAMI\Message\Event\QueueMemberRemovedEvent
 
 Event triggered for a QueueMemberRemove action.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: QueueMemberRemovedEvent

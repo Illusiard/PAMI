@@ -3,7 +3,7 @@ PAMI\Message\Event\DongleShowDevicesCompleteEvent
 
 Event triggered for the end of the list of dongle channels.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleShowDevicesCompleteEvent

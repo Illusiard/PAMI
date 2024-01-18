@@ -3,7 +3,7 @@ PAMI\Message\Action\DBDelAction
 
 DBDel action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DBDelAction

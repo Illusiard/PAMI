@@ -3,7 +3,7 @@ PAMI\Message\Action\ConfbridgeListAction
 
 Lists all users in a particular ConfBridge conference.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ConfbridgeListAction

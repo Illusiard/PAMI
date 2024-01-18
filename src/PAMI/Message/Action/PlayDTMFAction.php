@@ -2,12 +2,13 @@
 /**
  * PlayDTMF action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * PlayDTMF action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,12 +48,12 @@ class PlayDTMFAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $user     AMI username.
-     * @param string $password AMI password.
+     * @param string $channel
+     * @param string $digit
      *
      * @return void
      */
-    public function __construct($channel, $digit)
+    public function __construct(string $channel, string $digit)
     {
         parent::__construct('PlayDTMF');
         $this->setKey('Channel', $channel);

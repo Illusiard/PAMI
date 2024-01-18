@@ -2,7 +2,7 @@
 /**
  * ConfbridgeMute action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 /**
  * ConfbridgeMute action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -51,7 +51,7 @@ class ConfbridgeMuteAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($channel, $conference)
+    public function __construct(string $channel, string $conference)
     {
         parent::__construct('ConfbridgeMute');
         $this->setKey('Channel', $channel);

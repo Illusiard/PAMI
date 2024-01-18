@@ -5,7 +5,7 @@ On reception of an inbound SMS (SMS-DELIVERY) the message will also be
 reported as a manager event, however, acknowledgment still relies on SMS
 spooler to handle the message. This event is generated starting from 0.21.0
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: VgsmSmsRxEvent

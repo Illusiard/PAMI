@@ -3,7 +3,7 @@ PAMI\Message\Event\ExtensionStatusEvent
 
 Triggered when an extension changes its status.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: ExtensionStatusEvent

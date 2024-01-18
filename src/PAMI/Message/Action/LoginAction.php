@@ -2,12 +2,13 @@
 /**
  * Login action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,12 +33,13 @@ namespace PAMI\Message\Action;
 /**
  * Login action message.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,13 +48,13 @@ class LoginAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $user AMI username.
-     * @param string $password AMI password.
-     * @param string|null $eventMask
+     * @param string  $user AMI username.
+     * @param string  $password AMI password.
+     * @param ?string $eventMask
      *
      * @return void
      */
-    public function __construct($user, $password, $eventMask = null)
+    public function __construct(string $user, string $password, ?string $eventMask = null)
     {
         parent::__construct('Login');
         $this->setKey('Username', $user);

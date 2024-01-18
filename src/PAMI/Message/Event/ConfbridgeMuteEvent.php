@@ -2,12 +2,13 @@
 /**
  * Event triggered when a channel is muted in a confbridge.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,234 +33,16 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered when a channel is muted in a confbridge.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ConfbridgeMuteEvent extends EventMessage
+class ConfbridgeMuteEvent extends BaseSingleConfbridgeEvent
 {
-    /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Conference'.
-     *
-     * @return string
-     */
-    public function getConference()
-    {
-        return $this->getKey('Conference');
-    }
-
-    /**
-     * Returns key: 'BridgeUniqueid'.
-     *
-     * @return string
-     */
-    public function getBridgeUniqueid()
-    {
-        return $this->getKey('BridgeUniqueid');
-    }
-
-    /**
-     * Returns key: 'BridgeType'.
-     *
-     * @return string
-     */
-    public function getBridgeType()
-    {
-        return $this->getKey('BridgeType');
-    }
-
-    /**
-     * Returns key: 'BridgeTechnology'.
-     *
-     * @return string
-     */
-    public function getBridgeTechnology()
-    {
-        return $this->getKey('BridgeTechnology');
-    }
-
-    /**
-     * Returns key: 'BridgeCreator'.
-     *
-     * @return string
-     */
-    public function getBridgeCreator()
-    {
-        return $this->getKey('BridgeCreator');
-    }
-
-    /**
-     * Returns key: 'BridgeName'.
-     *
-     * @return string
-     */
-    public function getBridgeName()
-    {
-        return $this->getKey('BridgeName');
-    }
-
-    /**
-     * Returns key: 'BridgeNumChannels'.
-     *
-     * @return string
-     */
-    public function getBridgeNumChannels()
-    {
-        return $this->getKey('BridgeNumChannels');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
-     * Returns key: 'ChannelState'.
-     *
-     * @return string
-     */
-    public function getChannelState()
-    {
-        return $this->getKey('ChannelState');
-    }
-
-    /**
-     * Returns key: 'ChannelStateDesc'.
-     *
-     * @return string
-     */
-    public function getChannelStateDesc()
-    {
-        return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineNum'.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
-    {
-        return $this->getKey('ConnectedLineNum');
-    }
-
-    /**
-     * Returns key: 'ConnectedLineName'.
-     *
-     * @return string
-     */
-    public function getConnectedLineName()
-    {
-        return $this->getKey('ConnectedLineName');
-    }
-
-    /**
-     * Returns key: 'AccountCode'.
-     *
-     * @return string
-     */
-    public function getAccountCode()
-    {
-        return $this->getKey('AccountCode');
-    }
-
-    /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-    /**
-     * Returns key: 'Exten'.
-     *
-     * @return string
-     */
-    public function getExten()
-    {
-        return $this->getKey('Exten');
-    }
-
-    /**
-     * Returns key: 'Priority'.
-     *
-     * @return string
-     */
-    public function getPriority()
-    {
-        return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
-    }
-
-    /**
-     * Returns key: 'Linkedid'.
-     *
-     * @return string
-     */
-    public function getLinkedid()
-    {
-        return $this->getKey('Linkedid');
-    }
-
-    /**
-     * Returns key: 'Admin'.
-     *
-     * @return string
-     */
-    public function getAdmin()
-    {
-        return $this->getKey('Admin');
-    }
 }

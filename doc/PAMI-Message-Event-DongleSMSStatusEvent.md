@@ -3,7 +3,7 @@ PAMI\Message\Event\DongleSMSStatusEvent
 
 Event triggered when a sms was queued for sent by dongle.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DongleSMSStatusEvent

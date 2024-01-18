@@ -2,7 +2,7 @@
 /**
  * PAMI family of exceptions.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Exception
@@ -28,10 +28,12 @@
  */
 namespace PAMI\Exception;
 
+use Exception;
+
 /**
  * PAMI family of exceptions.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category Pami
  * @package  Exception
@@ -39,6 +41,6 @@ namespace PAMI\Exception;
  * @license  http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link     http://marcelog.github.com/PAMI/
  */
-class PAMIException extends \Exception
+class PAMIException extends Exception
 {
 }

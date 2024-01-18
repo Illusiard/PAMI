@@ -2,12 +2,13 @@
 /**
  * Event triggered when an action DAHDIShowChannel is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an action DAHDIShowChannel is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class DAHDIShowChannelsEvent extends EventMessage
 {
     /**
-     * Returns key: 'DAHDIChannel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'Signalling'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSignalling()
+    public function getSignalling(): ?string
     {
         return $this->getKey('Signalling');
     }
@@ -68,30 +58,19 @@ class DAHDIShowChannelsEvent extends EventMessage
     /**
      * Returns key: 'SignallingCode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSignallingCode()
+    public function getSignallingCode(): ?string
     {
         return $this->getKey('SignallingCode');
     }
 
     /**
-     * Returns key: 'Context'.
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->getKey('Context');
-    }
-
-
-    /**
      * Returns key: 'DND'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDND()
+    public function getDND(): ?string
     {
         return $this->getKey('DND');
     }
@@ -99,9 +78,9 @@ class DAHDIShowChannelsEvent extends EventMessage
     /**
      * Returns key: 'Alarm'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getAlarm()
+    public function getAlarm(): ?string
     {
         return $this->getKey('Alarm');
     }

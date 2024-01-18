@@ -2,12 +2,13 @@
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when exchanging rtp stats.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class RTCPReceivedEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'From'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFrom()
+    public function getFrom(): ?string
     {
         return $this->getKey('From');
     }
@@ -68,9 +58,9 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'PT'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPT()
+    public function getPT(): ?string
     {
         return $this->getKey('PT');
     }
@@ -78,9 +68,9 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'ReceptionReports'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getReceptionReports()
+    public function getReceptionReports(): ?string
     {
         return $this->getKey('ReceptionReports');
     }
@@ -88,9 +78,9 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'SenderSSRC'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSenderSSRC()
+    public function getSenderSSRC(): ?string
     {
         return $this->getKey('SenderSSRC');
     }
@@ -98,9 +88,9 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'FractionLost'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getFractionLost()
+    public function getFractionLost(): ?string
     {
         return $this->getKey('FractionLost');
     }
@@ -108,9 +98,9 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'PacketsLost'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getPacketsLost()
+    public function getPacketsLost(): ?string
     {
         return $this->getKey('PacketsLost');
     }
@@ -118,54 +108,54 @@ class RTCPReceivedEvent extends EventMessage
     /**
      * Returns key: 'HighestSequence'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getHighestSequence()
+    public function getHighestSequence(): ?string
     {
         return $this->getKey('HighestSequence');
     }
     /**
      * Returns key: 'SequenceNumberCycles'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getSequenceNumberCycles()
+    public function getSequenceNumberCycles(): ?string
     {
         return $this->getKey('SequenceNumberCycles');
     }
     /**
      * Returns key: 'IAJitter'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIAJitter()
+    public function getIAJitter(): ?string
     {
         return $this->getKey('IAJitter');
     }
     /**
      * Returns key: 'LastSR'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getLastSR()
+    public function getLastSR(): ?string
     {
         return $this->getKey('LastSR');
     }
     /**
      * Returns key: 'DLSR'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDLSR()
+    public function getDLSR(): ?string
     {
         return $this->getKey('DLSR');
     }
     /**
      * Returns key: 'RTT'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRTT()
+    public function getRTT(): ?string
     {
         return $this->getKey('RTT');
     }

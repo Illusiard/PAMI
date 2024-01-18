@@ -3,7 +3,7 @@ PAMI\Message\Event\DBGetResponseEvent
 
 Event triggered when a database key is asked for.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: DBGetResponseEvent

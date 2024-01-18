@@ -3,7 +3,7 @@ PAMI\Message\Event\RenameEvent
 
 Event triggered when renaming a channel.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: RenameEvent

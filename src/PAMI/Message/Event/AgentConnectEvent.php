@@ -2,12 +2,13 @@
 /**
  * Event triggered when an agent connects.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,38 +30,27 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered when an agent connects.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
 class AgentConnectEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
-     *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
      * Returns key: 'HoldTime'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getHoldTime()
+    public function getHoldTime(): ?string
     {
         return $this->getKey('HoldTime');
     }
@@ -68,9 +58,9 @@ class AgentConnectEvent extends EventMessage
     /**
      * Returns key: 'BridgedChannel'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgedChannel()
+    public function getBridgedChannel(): ?string
     {
         return $this->getKey('BridgedChannel');
     }
@@ -78,9 +68,9 @@ class AgentConnectEvent extends EventMessage
     /**
      * Returns key: 'RingTime'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRingTime()
+    public function getRingTime(): ?string
     {
         return $this->getKey('RingTime');
     }
@@ -88,9 +78,9 @@ class AgentConnectEvent extends EventMessage
     /**
      * Returns key: 'Member'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMember()
+    public function getMember(): ?string
     {
         return $this->getKey('Member');
     }
@@ -98,9 +88,9 @@ class AgentConnectEvent extends EventMessage
     /**
      * Returns key: 'MemberName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getMemberName()
+    public function getMemberName(): ?string
     {
         return $this->getKey('MemberName');
     }
@@ -108,30 +98,11 @@ class AgentConnectEvent extends EventMessage
     /**
      * Returns key: 'Queue'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getQueue()
+    public function getQueue(): ?string
     {
         return $this->getKey('Queue');
     }
 
-    /**
-     * Returns key: 'UniqueID'.
-     *
-     * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
 }

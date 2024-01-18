@@ -2,12 +2,13 @@
 /**
  * Event triggered for each peer when an action Sippeers is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -29,17 +30,16 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
-
 /**
  * Event triggered for each peer when an action Sippeers is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Boltunov Artem <dev@bluescarf.ru>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -48,9 +48,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'ChannelType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannelType()
+    public function getChannelType(): ?string
     {
         return $this->getKey('ChannelType');
     }
@@ -58,9 +58,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'ObjectName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getObjectName()
+    public function getObjectName(): ?string
     {
         return $this->getKey('ObjectName');
     }
@@ -68,9 +68,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'ChanObjectType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getChannelObjectType()
+    public function getChannelObjectType(): ?string
     {
         return $this->getKey('ChanObjectType');
     }
@@ -78,9 +78,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'IPAddress'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIPAddress()
+    public function getIPAddress(): ?string
     {
         return $this->getKey('IPAddress');
     }
@@ -88,9 +88,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'IPPort'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getIPPort()
+    public function getIPPort(): ?string
     {
         return $this->getKey('IPPort');
     }
@@ -98,9 +98,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'Dynamic'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getDynamic()
+    public function getDynamic(): ?string
     {
         return $this->getKey('Dynamic');
     }
@@ -108,9 +108,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'NatSupport'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getNatSupport()
+    public function getNatSupport(): ?string
     {
         return $this->getKey('NatSupport');
     }
@@ -118,9 +118,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'VideoSupport'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getVideoSupport()
+    public function getVideoSupport(): ?string
     {
         return $this->getKey('VideoSupport');
     }
@@ -128,9 +128,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'TextSupport'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getTextSupport()
+    public function getTextSupport(): ?string
     {
         return $this->getKey('TextSupport');
     }
@@ -138,9 +138,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'ACL'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getACL()
+    public function getACL(): ?string
     {
         return $this->getKey('ACL');
     }
@@ -148,9 +148,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'Status'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->getKey('Status');
     }
@@ -158,9 +158,9 @@ class PeerEntryEvent extends EventMessage
     /**
      * Returns key: 'RealtimeDevice'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getRealtimeDevice()
+    public function getRealtimeDevice(): ?string
     {
         return $this->getKey('RealtimeDevice');
     }

@@ -2,7 +2,7 @@
 /**
  * Event triggered for the end of the list when an action BridgeInfo is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -32,7 +32,7 @@ namespace PAMI\Message\Event;
 /**
  * Event triggered for the end of the list when an action BridgeInfo is issued.
  *
- * PHP Version 5
+ * PHP Version 7.4
  *
  * @category   Pami
  * @package    Message
@@ -46,9 +46,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeUniqueid'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): ?string
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -56,9 +56,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeType'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeType()
+    public function getBridgeType(): ?string
     {
         return $this->getKey('BridgeType');
     }
@@ -66,9 +66,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeTechnology'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): ?string
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -76,9 +76,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeCreator'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): ?string
     {
         return $this->getKey('BridgeCreator');
     }
@@ -86,9 +86,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeName'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeName()
+    public function getBridgeName(): ?string
     {
         return $this->getKey('BridgeName');
     }
@@ -96,9 +96,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeNumChannels'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): ?string
     {
         return $this->getKey('BridgeNumChannels');
     }
@@ -106,9 +106,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeVideoSourceMode'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeVideoSourceMode()
+    public function getBridgeVideoSourceMode(): ?string
     {
         return $this->getKey('BridgeVideoSourceMode');
     }
@@ -116,9 +116,9 @@ class BridgeInfoCompleteEvent extends EventMessage
     /**
      * Returns key: 'BridgeVideoSource'.
      *
-     * @return string
+     * @return ?string
      */
-    public function getBridgeVideoSource()
+    public function getBridgeVideoSource(): ?string
     {
         return $this->getKey('BridgeVideoSource');
     }

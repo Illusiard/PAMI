@@ -3,7 +3,7 @@ PAMI\Listener\IEventListener
 
 Implement this interface in your own classes to make them event listeners.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Interface name: IEventListener

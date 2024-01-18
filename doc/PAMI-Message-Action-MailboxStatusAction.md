@@ -3,7 +3,7 @@ PAMI\Message\Action\MailboxStatusAction
 
 MailboxStatus action message.
 
-PHP Version 5
+PHP Version 7.4
 
 
 * Class name: MailboxStatusAction
