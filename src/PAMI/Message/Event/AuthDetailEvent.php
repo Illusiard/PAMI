@@ -2,7 +2,7 @@
 
 namespace PAMI\Message\Event;
 
-class AuthDetail extends EventMessage
+class AuthDetailEvent extends EventMessage
 {
     /**
      * The object's type. This will always be 'auth'.
