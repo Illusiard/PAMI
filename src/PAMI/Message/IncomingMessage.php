@@ -60,8 +60,9 @@ abstract class IncomingMessage extends Message
      */
     public function __sleep(): array
     {
-        $ret = parent::__sleep();
+        $ret   = parent::__sleep();
         $ret[] = 'rawContent';
+
         return $ret;
     }
 
@@ -130,24 +131,62 @@ abstract class IncomingMessage extends Message
     {
         parent::__construct();
         $this->channelVariables = ['default' => []];
-        $this->rawContent = $rawContent;
-        $lines = explode(Message::EOL, $rawContent);
+        $this->rawContent       = $rawContent;
+
+        if (strpos($this->rawContent, 'Command output follows') !== false) {
+            $this->parseCommandResponse();
+        } else {
+            $this->parseNormal();
+        }
+    }
+
+    private function parseCommandResponse(): void
+    {
+        $lines = explode(Message::EOL, $this->rawContent);
+        foreach ($lines as $line) {
+            $content = explode(':', $line, 2);
+            if ($content[0] === 'Output') {
+                $this->addToKey('Output', $content[1] ?? '');
+            } else {
+                $this->setKey($content[0], $content[1]);
+            }
+        }
+    }
+
+    /**
+     * Adds a variable to this message.
+     *
+     * @param string $key   Key name (i.e: Action).
+     * @param string $value Key value.
+     *
+     * @return void
+     */
+    protected function addToKey(string $key, string $value): void
+    {
+        $key              = strtolower($key);
+        $this->keys[$key] ??= '';
+        $this->keys[$key] .= $value;
+    }
+
+    private function parseNormal(): void
+    {
+        $lines = explode(Message::EOL, $this->rawContent);
         foreach ($lines as $line) {
             $content = explode(':', $line);
-            $name = strtolower(trim($content[0]));
+            $name    = strtolower(trim($content[0]));
             unset($content[0]);
             $value = isset($content[1]) ? trim(implode(':', $content)) : '';
             if (!strncmp($name, 'chanvariable', 12)) {
                 // https://github.com/marcelog/PAMI/issues/85
-                $matches = preg_match("/\(([^\)]*)\)/", $name, $captures);
+                $matches  = preg_match("/\(([^\)]*)\)/", $name, $captures);
                 $chanName = 'default';
                 if ($matches > 0) {
                     $chanName = $captures[1];
                 }
                 $content = explode('=', $value);
-                $name = strtolower(trim($content[0]));
+                $name    = strtolower(trim($content[0]));
                 unset($content[0]);
-                $value = isset($content[1]) ? trim(implode(':', $content)) : '';
+                $value                                    = isset($content[1]) ? trim(implode(':', $content)) : '';
                 $this->channelVariables[$chanName][$name] = $value;
             } else {
                 $this->setKey($name, $value);

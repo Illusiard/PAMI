@@ -136,9 +136,14 @@ class ResponseMessage extends IncomingMessage
      */
     public function isList(): bool
     {
-        return
-            stripos($this->getKey('EventList'), 'start') !== false
-            || stripos($this->getMessage(), 'follow') !== false;
+        if (stripos($this->getKey('EventList'), 'start') !== false) {
+            return true;
+        }
+        if (stripos($this->getMessage(), 'Command output follows') !== false) {
+            return false;
+        }
+
+        return stripos($this->getMessage(), 'follow') !== false;
     }
 
     /**
