@@ -146,9 +146,9 @@ abstract class IncomingMessage extends Message
         foreach ($lines as $line) {
             $content = explode(':', $line, 2);
             if ($content[0] === 'Output') {
-                $this->addToKey('Output', $content[1] ?? '');
+                $this->addToKey('Output', trim($content[1] ?? '') . "\n");
             } else {
-                $this->setKey($content[0], $content[1]);
+                $this->setKey($content[0], trim($content[1]));
             }
         }
     }
