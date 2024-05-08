@@ -18,9 +18,14 @@ namespace PAMI\Message\Event;
  */
 class ContactListEvent extends EventMessage
 {
+    public const STATUS_REACHABLE     = 'Reachable';
+    public const STATUS_UNREACHABLE   = 'Unreachable';
+    public const STATUS_NON_QUALIFIED = 'NonQualified';
+    public const STATUS_UNKNOWN       = 'Unknown';
+
     /**
      * The object's type. This will always be 'contact'.
-     * 
+     *
      * @return ?string
      */
     public function getObjectType(): ?string
@@ -30,7 +35,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The name of this object.
-     * 
+     *
      * @return ?string
      */
     public function getObjectName(): ?string
@@ -40,7 +45,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * IP address of the last Via header in REGISTER request. Will only appear in the event if available.
-     * 
+     *
      * @return ?string
      */
     public function getViaAddr(): ?string
@@ -50,7 +55,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * Port number of the last Via header in REGISTER request. Will only appear in the event if available.
-     * 
+     *
      * @return ?string
      */
     public function getViaPort(): ?string
@@ -60,7 +65,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The elapsed time in decimal seconds after which an OPTIONS message is sent before the contact is considered unavailable.
-     * 
+     *
      * @return ?string
      */
     public function getQualifyTimeout(): ?string
@@ -70,7 +75,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * Content of the Call-ID header in REGISTER request. Will only appear in the event if available.
-     * 
+     *
      * @return ?string
      */
     public function getCallId(): ?string
@@ -80,7 +85,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * Asterisk Server name.
-     * 
+     *
      * @return ?string
      */
     public function getRegServer(): ?string
@@ -90,7 +95,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * If true delete the contact on Asterisk restart/boot.
-     * 
+     *
      * @return ?string
      */
     public function getPruneOnBoot(): ?string
@@ -100,7 +105,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The Path header received on the REGISTER.
-     * 
+     *
      * @return ?string
      */
     public function getPath(): ?string
@@ -110,7 +115,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The name of the endpoint associated with this information.
-     * 
+     *
      * @return ?string
      */
     public function getEndpoint(): ?string
@@ -120,7 +125,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * A boolean indicating whether a qualify should be authenticated.
-     * 
+     *
      * @return ?string
      */
     public function getAuthenticateQualify(): ?string
@@ -130,7 +135,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * This contact's URI.
-     * 
+     *
      * @return ?string
      */
     public function getUri(): ?string
@@ -140,7 +145,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The interval in seconds at which the contact will be qualified.
-     * 
+     *
      * @return ?string
      */
     public function getQualifyFrequency(): ?string
@@ -150,7 +155,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * Content of the User-Agent header in REGISTER request
-     * 
+     *
      * @return ?string
      */
     public function getUserAgent(): ?string
@@ -160,7 +165,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * Absolute time that this contact is no longer valid after
-     * 
+     *
      * @return ?string
      */
     public function getExpirationTime(): ?string
@@ -170,7 +175,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The contact's outbound proxy.
-     * 
+     *
      * @return ?string
      */
     public function getOutboundProxy(): ?string
@@ -180,7 +185,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * This contact's status.
-     * 
+     *
      * @return ?string
      */
     public function getStatus(): ?string
@@ -190,7 +195,7 @@ class ContactListEvent extends EventMessage
 
     /**
      * The round trip time in microseconds.
-     * 
+     *
      * @return ?string
      */
     public function getRoundtripUsec(): ?string
