@@ -43,7 +43,7 @@ namespace PAMI\Message\Event;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ShowDialPlanCompleteEvent extends EventMessage
+class ShowDialPlanCompleteEvent extends BaseCompleteEvent
 {
     /**
      * Returns key: 'Privilege'.
@@ -53,16 +53,6 @@ class ShowDialPlanCompleteEvent extends EventMessage
     public function getPrivilege(): ?string
     {
         return $this->getKey('privilege');
-    }
-
-    /**
-     * Returns key: 'ListItems'.
-     *
-     * @return ?string
-     */
-    public function getListItems(): ?string
-    {
-        return $this->getKey('listitems');
     }
 
     /**

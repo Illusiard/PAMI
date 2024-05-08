@@ -43,15 +43,6 @@ namespace PAMI\Message\Event;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class DongleShowDevicesCompleteEvent extends EventMessage
+class DongleShowDevicesCompleteEvent extends BaseCompleteEvent
 {
-    /**
-     * Returns key: 'ListItems'.
-     *
-     * @return ?string
-     */
-    public function getListItems(): ?string
-    {
-        return $this->getKey('listitems');
-    }
 }

@@ -1,6 +1,7 @@
 <?php
 /**
- * Event triggered for the end of the list when an action Sippeers is issued.
+ * Event triggered for the end of the list when an action QueueSummary
+ * is issued.
  *
  * PHP Version 7.4
  *
@@ -31,7 +32,8 @@
 namespace PAMI\Message\Event;
 
 /**
- * Event triggered for the end of the list when an action Sippeers is issued.
+ * Event triggered for the end of the list when an action QueueSummary
+ * is issued.
  *
  * PHP Version 7.4
  *
@@ -43,6 +45,15 @@ namespace PAMI\Message\Event;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class PeerlistCompleteEvent extends BaseCompleteEvent
+abstract class BaseCompleteEvent extends EventMessage
 {
+    /**
+     * Returns key: 'ListItems'.
+     *
+     * @return ?string
+     */
+    public function getListItems(): ?string
+    {
+        return $this->getKey('listitems');
+    }
 }

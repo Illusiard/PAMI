@@ -45,15 +45,6 @@ namespace PAMI\Message\Event;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class CoreShowChannelsCompleteEvent extends EventMessage
+class CoreShowChannelsCompleteEvent extends BaseCompleteEvent
 {
-    /**
-     * Returns key: 'ListItems'.
-     *
-     * @return ?string
-     */
-    public function getListItems(): ?string
-    {
-        return $this->getKey('ListItems');
-    }
 }
