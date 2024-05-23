@@ -411,7 +411,7 @@ class ClientImpl implements IClient
      * @throws Exception
      * @see ClientImpl::send()
      */
-    public function send(OutgoingMessage $message): ResponseMessage
+    public function send(OutgoingMessage $message, ?int $timeout = null): ResponseMessage
     {
         $messageToSend = $message->serialize();
         $length        = strlen($messageToSend);
@@ -423,7 +423,7 @@ class ClientImpl implements IClient
             throw new ClientException('Could not send message');
         }
         $read = 0;
-        while ($read <= $this->rTimeout) {
+        while ($read <= ($timeout ?? $this->rTimeout)) {
             $this->process();
             $response = $this->getRelated($message);
             if ($response !== false) {
@@ -432,7 +432,7 @@ class ClientImpl implements IClient
                 return $response;
             }
             usleep(1000); // 1ms delay
-            if ($this->rTimeout > 0) {
+            if (($timeout ?? $this->rTimeout) > 0) {
                 $read++;
             }
         }
